@@ -67,25 +67,34 @@
             background: #ffffff;
         }
 
+        /* ============================================
+           LAYOUT SYSTEM - CSS GRID & FLEXBOX
+           ============================================ */
+        
+        /* Main Container - Centered with max-width */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Quick Contact Bar */
+        /* Quick Contact Bar - Flexbox for horizontal layout */
         .quick-contact {
             background: #0066cc;
             color: white;
             padding: 10px 0;
             text-align: center;
             font-size: 0.95rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .quick-contact a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
             font-weight: 500;
             transition: opacity 0.3s;
         }
@@ -94,12 +103,15 @@
             opacity: 0.8;
         }
 
-        /* Header */
+        /* ============================================
+           HEADER - FLEXBOX LAYOUT
+           ============================================ */
         header {
             position: relative;
             width: 100%;
             min-height: 200px;
             background: #ffffff;
+            /* Flexbox for centering content */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -166,7 +178,9 @@
             margin-bottom: 5px;
         }
 
-        /* Navigation */
+        /* ============================================
+           NAVIGATION - FLEXBOX LAYOUT
+           ============================================ */
         nav {
             background: #ffffff;
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
@@ -177,8 +191,12 @@
 
         nav ul {
             list-style: none;
+            /* Flexbox for horizontal navigation */
             display: flex;
             justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
             padding: 20px 0;
         }
 
@@ -227,14 +245,17 @@
             border-radius: 2px;
         }
 
-        /* About Section */
+        /* ============================================
+           ABOUT SECTION - CSS GRID LAYOUT
+           ============================================ */
         .about {
             background: #ffffff;
         }
 
         .about-content {
+            /* CSS Grid: 2-column layout */
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: 60px;
             align-items: start;
             margin-bottom: 60px;
@@ -274,8 +295,9 @@
 
         .about-additional {
             margin-top: 60px;
+            /* CSS Grid: 2-column layout */
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: 60px;
             align-items: center;
         }
@@ -336,12 +358,15 @@
             line-height: 1.7;
         }
 
-        /* Services Section */
+        /* ============================================
+           SERVICES SECTION - CSS GRID LAYOUT
+           ============================================ */
         .services {
             background: #ffffff;
         }
 
         .services-grid {
+            /* CSS Grid: Responsive auto-fit columns */
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
@@ -408,12 +433,15 @@
             line-height: 1.6;
         }
 
-        /* Testimonials Section */
+        /* ============================================
+           TESTIMONIALS SECTION - CSS GRID LAYOUT
+           ============================================ */
         .testimonials {
             background: #f0f7ff;
         }
 
         .testimonials-grid {
+            /* CSS Grid: Responsive auto-fit columns */
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
@@ -513,25 +541,30 @@
             font-size: 1rem;
         }
 
-        /* Contact Section */
+        /* ============================================
+           CONTACT SECTION - CSS GRID & FLEXBOX
+           ============================================ */
         .contact {
             background: #f0f7ff;
         }
 
         .contact-content {
+            /* CSS Grid: 2-column layout */
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: 60px;
             align-items: start;
         }
 
         .contact-info {
+            /* Flexbox: Vertical stack */
             display: flex;
             flex-direction: column;
             gap: 35px;
         }
 
         .contact-item {
+            /* Flexbox: Horizontal layout for icon + content */
             display: flex;
             align-items: flex-start;
             gap: 20px;
@@ -581,6 +614,7 @@
         }
 
         .phone-numbers {
+            /* Flexbox: Vertical stack for phone numbers */
             display: flex;
             flex-direction: column;
             gap: 8px;
@@ -636,7 +670,9 @@
             display: flex;
         }
 
-        /* Footer */
+        /* ============================================
+           FOOTER - CSS GRID & FLEXBOX
+           ============================================ */
         footer {
             background: #0066cc;
             color: white;
@@ -644,6 +680,7 @@
         }
 
         .footer-content {
+            /* CSS Grid: 2-column layout (2:1 ratio) */
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 50px;
@@ -658,7 +695,10 @@
         }
 
         .social-links {
+            /* Flexbox: Horizontal layout for social icons */
             display: flex;
+            align-items: center;
+            justify-content: flex-start;
             gap: 15px;
             margin-top: 15px;
         }
