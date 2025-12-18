@@ -16,14 +16,43 @@
     <meta name="geo.region" content="IN-OR">
     <meta name="geo.placename" content="Sundargarh, Odisha">
     
+    <!-- Fonts: Montserrat for headings, Inter for body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        /* ============================================
+           COLOR PALETTE & TYPOGRAPHY
+           ============================================ */
+        :root {
+            --primary-blue: #0056b3;
+            --secondary-blue: #e3f2fd;
+            --text-dark: #1a1a1a;
+            --text-gray: #555;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-blue);
         }
 
         /* Loading Animation */
@@ -33,7 +62,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #ffffff;
+            background: var(--white);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -49,8 +78,8 @@
         .loader-spinner {
             width: 60px;
             height: 60px;
-            border: 5px solid #e6f2ff;
-            border-top: 5px solid #0066cc;
+            border: 5px solid var(--secondary-blue);
+            border-top: 5px solid var(--primary-blue);
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
@@ -60,65 +89,83 @@
             100% { transform: rotate(360deg); }
         }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #ffffff;
-        }
-
         /* ============================================
-           LAYOUT SYSTEM - CSS GRID & FLEXBOX
+           LAYOUT SYSTEM
            ============================================ */
-        
-        /* Main Container - Centered with max-width */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Quick Contact Bar - Flexbox for horizontal layout */
+        /* Quick Contact Bar */
         .quick-contact {
-            background: #0066cc;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-            font-size: 0.95rem;
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 12px 0;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 20px;
+            font-size: 0.95rem;
         }
 
         .quick-contact a {
-            color: white;
+            color: var(--white);
             text-decoration: none;
             font-weight: 500;
             transition: opacity 0.3s;
         }
 
         .quick-contact a:hover {
-            opacity: 0.8;
+            opacity: 0.85;
         }
 
         /* ============================================
-           HEADER - FLEXBOX LAYOUT
+           STICKY CTA BUTTON
+           ============================================ */
+        .sticky-cta {
+            position: fixed;
+            top: 80px;
+            right: 30px;
+            padding: 14px 35px;
+            background: var(--primary-blue);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+            z-index: 98;
+            display: none;
+        }
+
+        .sticky-cta.visible {
+            display: block;
+        }
+
+        .sticky-cta:hover {
+            background: #004499;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ============================================
+           HEADER
            ============================================ */
         header {
             position: relative;
             width: 100%;
             min-height: 200px;
-            background: #ffffff;
-            /* Flexbox for centering content */
+            background: var(--white);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #0066cc;
-            text-align: center;
             padding: 30px 20px;
-            border-bottom: 2px solid #e6f2ff;
+            border-bottom: 2px solid var(--secondary-blue);
         }
 
         .header-logo {
@@ -142,48 +189,48 @@
             text-align: center;
         }
 
-        .cta-button {
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+
+        .header-content .subtitle {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+
+        .header-cta {
             position: absolute;
             top: 20px;
             right: 30px;
             padding: 14px 35px;
-            background: #0066cc;
-            color: white;
+            background: var(--primary-blue);
+            color: var(--white);
             text-decoration: none;
             border-radius: 8px;
             font-weight: 600;
             font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+            box-shadow: var(--shadow-md);
             z-index: 10;
         }
 
-        .cta-button:hover {
+        .header-cta:hover {
             background: #004499;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-            color: #0066cc;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: #0066cc;
-            margin-bottom: 5px;
+            box-shadow: var(--shadow-lg);
         }
 
         /* ============================================
-           NAVIGATION - FLEXBOX LAYOUT
+           NAVIGATION
            ============================================ */
         nav {
-            background: #ffffff;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -191,7 +238,6 @@
 
         nav ul {
             list-style: none;
-            /* Flexbox for horizontal navigation */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -200,16 +246,13 @@
             padding: 20px 0;
         }
 
-        nav ul li {
-            margin: 0 40px;
-        }
-
         nav ul li a {
             text-decoration: none;
-            color: #0066cc;
+            color: var(--primary-blue);
             font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
             transition: color 0.3s;
-            font-size: 1rem;
+            font-size: 0.95rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -218,17 +261,18 @@
             color: #004499;
         }
 
-        /* Sections */
+        /* ============================================
+           SECTIONS - 80px SPACING
+           ============================================ */
         section {
-            padding: 60px 0;
+            padding: 80px 0;
         }
 
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 60px;
-            color: #0066cc;
-            font-weight: 700;
+            color: var(--primary-blue);
             position: relative;
             padding-bottom: 20px;
         }
@@ -241,21 +285,86 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: #0066cc;
+            background: var(--primary-blue);
             border-radius: 2px;
         }
 
         /* ============================================
-           ABOUT SECTION - CSS GRID LAYOUT
+           MEET THE DOCTOR HERO SECTION
+           ============================================ */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--white) 100%);
+            padding: 100px 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text .hero-subtitle {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .hero-text .hero-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        .hero-text .trust-badges {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .trust-badge strong {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .trust-badge span {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .hero-image {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            object-fit: cover;
+            height: 500px;
+        }
+
+        /* ============================================
+           ABOUT SECTION
            ============================================ */
         .about {
-            background: #ffffff;
+            background: var(--white);
         }
 
         .about-content {
-            /* CSS Grid: 2-column layout */
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: start;
             margin-bottom: 60px;
@@ -264,184 +373,220 @@
         .about-text {
             font-size: 1.1rem;
             line-height: 1.9;
-            color: #444;
+            color: var(--text-gray);
         }
 
         .about-text p {
             margin-bottom: 25px;
         }
 
-        .about-text strong {
-            color: #0066cc;
-            font-weight: 600;
+        .about-text .legacy-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
         }
 
         .about-image {
             width: 100%;
             border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-            object-fit: contain;
+            box-shadow: var(--shadow-md);
+            object-fit: cover;
             background: #f8f9fa;
+            height: auto;
         }
 
-        .about-image-full {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-            object-fit: contain;
-            background: #f8f9fa;
-            margin-top: 40px;
+        .about-side-images {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
         }
 
-        .about-additional {
-            margin-top: 60px;
-            /* CSS Grid: 2-column layout */
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 60px;
-            align-items: center;
-        }
-
-        .about-additional-text {
-            font-size: 1.1rem;
-            line-height: 1.9;
-            color: #444;
-        }
-
-        .about-additional-text p {
-            margin-bottom: 20px;
-        }
-
-        /* Why Choose Us Section */
-        .why-choose {
-            background: #f0f7ff;
-        }
-
-        .why-choose-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .why-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: all 0.3s ease;
-            border-top: 4px solid #0066cc;
-        }
-
-        .why-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 30px rgba(0, 102, 204, 0.2);
-        }
-
-        .why-icon {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-
-        .why-card h3 {
-            color: #0066cc;
-            margin-bottom: 15px;
-            font-weight: 600;
-            font-size: 1.4rem;
-        }
-
-        .why-card p {
-            color: #666;
-            font-size: 1rem;
-            line-height: 1.7;
+        .about-side-images .about-image {
+            min-height: 400px;
         }
 
         /* ============================================
-           SERVICES SECTION - CSS GRID LAYOUT
+           SERVICES SECTION - SPECIFIC CARDS
            ============================================ */
         .services {
-            background: #ffffff;
+            background: var(--secondary-blue);
         }
 
         .services-grid {
-            /* CSS Grid: Responsive auto-fit columns */
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 30px;
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .service-card {
-            background: white;
-            padding: 45px 35px;
+            background: var(--white);
+            padding: 40px 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            box-shadow: var(--shadow-sm);
             text-align: center;
             transition: all 0.3s ease;
-            position: relative;
             cursor: pointer;
-            border-top: 4px solid #0066cc;
+            border-top: 4px solid var(--primary-blue);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 40px rgba(0, 102, 204, 0.2);
-            border-top-color: #004499;
-        }
-
-        .service-card::after {
-            content: attr(data-description);
-            position: absolute;
-            bottom: 25px;
-            left: 50%;
-            transform: translateX(-50%) translateY(10px);
-            opacity: 0;
-            transition: all 0.3s ease;
-            background: #0066cc;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            white-space: nowrap;
-            pointer-events: none;
-            font-weight: 500;
-        }
-
-        .service-card:hover::after {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
         }
 
         .service-icon {
-            font-size: 4rem;
-            margin-bottom: 25px;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
 
         .service-card h3 {
-            color: #0066cc;
+            font-size: 1.4rem;
             margin-bottom: 15px;
-            font-weight: 600;
-            font-size: 1.3rem;
+            color: var(--primary-blue);
         }
 
         .service-card p {
-            color: #666;
+            color: var(--text-gray);
             font-size: 1rem;
             line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .service-card .learn-more {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .service-card .learn-more:hover {
+            color: #004499;
+            text-decoration: underline;
         }
 
         /* ============================================
-           TESTIMONIALS SECTION - CSS GRID LAYOUT
+           OPTICAL GALLERY CAROUSEL
+           ============================================ */
+        .optical-gallery {
+            background: var(--white);
+        }
+
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            padding: 40px 20px;
+        }
+
+        .gallery-carousel {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .gallery-track {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            transition: transform 0.6s ease-in-out;
+            will-change: transform;
+        }
+
+        .gallery-item {
+            flex: 0 0 33.333%;
+            height: 100%;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .gallery-item-wrapper {
+            width: 100%;
+            height: 450px;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.6s ease-in-out;
+        }
+
+        .gallery-item.left .gallery-item-wrapper,
+        .gallery-item.right .gallery-item-wrapper {
+            height: 380px;
+            opacity: 1;
+        }
+
+        .gallery-item.center .gallery-item-wrapper {
+            height: 480px;
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Remove all gradients - no overlays on any images */
+        .gallery-item .gallery-item-wrapper::before,
+        .gallery-item .gallery-item-wrapper::after {
+            display: none !important;
+            content: none !important;
+            background: none !important;
+            background-image: none !important;
+        }
+
+        .gallery-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .gallery-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--secondary-blue);
+            border: 2px solid var(--primary-blue);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-dot.active {
+            background: var(--primary-blue);
+            transform: scale(1.2);
+        }
+
+        /* ============================================
+           TESTIMONIALS
            ============================================ */
         .testimonials {
-            background: #f0f7ff;
+            background: var(--secondary-blue);
         }
 
         .testimonials-grid {
-            /* CSS Grid: Responsive auto-fit columns */
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
@@ -450,57 +595,60 @@
         }
 
         .testimonial-card {
-            background: white;
+            background: var(--white);
             padding: 35px;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border-left: 4px solid #0066cc;
-        }
-
-        .testimonial-text {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            color: #0066cc;
-            font-weight: 600;
-            font-size: 1rem;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--primary-blue);
         }
 
         .testimonial-rating {
             color: #ffa500;
             font-size: 1.2rem;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
-        /* FAQ Section */
+        .testimonial-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* ============================================
+           PATIENT EDUCATION / FAQ
+           ============================================ */
         .faq {
-            background: #ffffff;
+            background: var(--white);
         }
 
         .faq-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .faq-item {
-            background: #f0f7ff;
+            background: var(--secondary-blue);
             margin-bottom: 20px;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            border: 1px solid #e6f2ff;
+            box-shadow: var(--shadow-sm);
         }
 
         .faq-question {
-            padding: 20px 25px;
-            background: #0066cc;
-            color: white;
+            padding: 25px 30px;
+            background: var(--primary-blue);
+            color: var(--white);
             font-weight: 600;
             font-size: 1.1rem;
+            font-family: 'Montserrat', sans-serif;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -514,7 +662,7 @@
 
         .faq-question::after {
             content: '+';
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 300;
             transition: transform 0.3s;
         }
@@ -524,88 +672,84 @@
         }
 
         .faq-answer {
-            padding: 0 25px;
+            padding: 0 30px;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease, padding 0.3s ease;
         }
 
         .faq-item.active .faq-answer {
-            padding: 20px 25px;
+            padding: 25px 30px;
             max-height: 500px;
         }
 
         .faq-answer p {
-            color: #555;
+            color: var(--text-gray);
             line-height: 1.8;
-            font-size: 1rem;
+            font-size: 1.05rem;
         }
 
         /* ============================================
-           CONTACT SECTION - CSS GRID & FLEXBOX
+           CONTACT SECTION
            ============================================ */
         .contact {
-            background: #f0f7ff;
+            background: var(--secondary-blue);
         }
 
         .contact-content {
-            /* CSS Grid: 2-column layout */
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: start;
         }
 
         .contact-info {
-            /* Flexbox: Vertical stack */
             display: flex;
             flex-direction: column;
-            gap: 35px;
+            gap: 25px;
         }
 
         .contact-item {
-            /* Flexbox: Horizontal layout for icon + content */
             display: flex;
             align-items: flex-start;
-            gap: 20px;
-            padding: 25px;
-            background: white;
+            gap: 15px;
+            padding: 18px 20px;
+            background: var(--white);
             border-radius: 12px;
-            border-left: 4px solid #0066cc;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--primary-blue);
             transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .contact-item:hover {
-            background: #ffffff;
             transform: translateX(5px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-md);
         }
 
         .contact-icon {
-            font-size: 1.8rem;
-            color: #0066cc;
-            margin-top: 5px;
-            min-width: 35px;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-top: 2px;
+            min-width: 30px;
         }
 
         .contact-details h3 {
-            color: #0066cc;
-            margin-bottom: 10px;
-            font-weight: 600;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
         }
 
         .contact-details p {
-            color: #555;
-            line-height: 1.8;
+            color: var(--text-gray);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin: 0;
         }
 
         .contact-details a {
-            color: #0066cc;
+            color: var(--primary-blue);
             text-decoration: none;
-            transition: color 0.3s;
             font-weight: 500;
+            transition: color 0.3s;
         }
 
         .contact-details a:hover {
@@ -614,14 +758,9 @@
         }
 
         .phone-numbers {
-            /* Flexbox: Vertical stack for phone numbers */
             display: flex;
             flex-direction: column;
             gap: 8px;
-        }
-
-        .phone-numbers a {
-            display: block;
         }
 
         .map-container {
@@ -629,8 +768,8 @@
             height: 450px;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-            border: 3px solid #0066cc;
+            box-shadow: var(--shadow-md);
+            border: 3px solid var(--primary-blue);
         }
 
         .map-container iframe {
@@ -639,48 +778,16 @@
             border: 0;
         }
 
-        /* Scroll to Top Button */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: #0066cc;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.5rem;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
-            transition: all 0.3s ease;
-            z-index: 99;
-        }
-
-        .scroll-to-top:hover {
-            background: #004499;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 102, 204, 0.5);
-        }
-
-        .scroll-to-top.visible {
-            display: flex;
-        }
-
         /* ============================================
-           FOOTER - CSS GRID & FLEXBOX
+           FOOTER
            ============================================ */
         footer {
-            background: #0066cc;
-            color: white;
-            padding: 50px 0 30px;
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 60px 0 30px;
         }
 
         .footer-content {
-            /* CSS Grid: 2-column layout (2:1 ratio) */
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 50px;
@@ -695,25 +802,22 @@
         }
 
         .social-links {
-            /* Flexbox: Horizontal layout for social icons */
             display: flex;
-            align-items: center;
-            justify-content: flex-start;
             gap: 15px;
             margin-top: 15px;
         }
 
         .social-links a {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--white);
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             transition: all 0.3s ease;
         }
 
@@ -734,54 +838,158 @@
             font-size: 0.95rem;
         }
 
-        /* Responsive */
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+
+        .scroll-to-top:hover {
+            background: #004499;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .scroll-to-top.visible {
+            display: flex;
+        }
+
+        /* WhatsApp Floating Icon */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-decoration: none;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            z-index: 99;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Consultation Hours Creative Display */
+        .consultation-hours {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .hours-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            border-left: 3px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hours-icon {
+            font-size: 1.2rem;
+        }
+
+        .hours-text {
+            flex: 1;
+        }
+
+        .hours-time {
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .quick-contact {
                 font-size: 0.85rem;
-                padding: 8px 0;
+                padding: 10px 0;
+                gap: 15px;
             }
 
-            .quick-contact a {
-                margin: 0 8px;
-                display: block;
+            .sticky-cta {
+                top: 70px;
+                right: 15px;
+                padding: 12px 25px;
+                font-size: 0.9rem;
             }
 
             header {
-                min-height: 200px;
+                min-height: 180px;
                 padding: 15px;
             }
 
             .header-logo {
-                width: 100px;
+                width: 120px;
                 top: 15px;
                 left: 15px;
                 transform: none;
             }
 
             .header-content {
-                padding-left: 0;
-                padding-top: 70px;
-                text-align: center;
-                width: 100%;
+                padding-top: 80px;
             }
 
-            .cta-button {
-                position: absolute;
+            .header-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .header-content .subtitle {
+                font-size: 1rem;
+            }
+
+            .header-cta {
                 top: 15px;
                 right: 15px;
                 padding: 10px 20px;
                 font-size: 0.85rem;
-                margin-top: 0;
             }
 
-            h1 {
-                font-size: 1.6rem;
-                line-height: 1.3;
-            }
-
-            .subtitle {
-                font-size: 0.95rem;
-                margin-top: 5px;
+            section {
+                padding: 60px 0;
             }
 
             .section-title {
@@ -789,32 +997,88 @@
                 margin-bottom: 40px;
             }
 
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-image {
+                height: 350px;
+            }
+
             .about-content,
-            .about-additional,
             .contact-content,
             .footer-content {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 40px;
             }
 
             nav ul {
                 flex-direction: column;
-                gap: 12px;
+                gap: 15px;
                 padding: 15px 0;
             }
 
-            nav ul li {
-                margin: 0;
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
             }
 
-            nav ul li a {
-                font-size: 0.9rem;
-            }
-
-            .services-grid,
             .testimonials-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 25px;
+            }
+
+            .gallery-carousel {
+                height: 400px;
+            }
+
+            .gallery-item {
+                flex: 0 0 100%;
+            }
+
+            .gallery-item-wrapper {
+                height: 350px;
+            }
+
+            .gallery-item.left .gallery-item-wrapper,
+            .gallery-item.right .gallery-item-wrapper {
+                height: 280px;
+            }
+
+            .gallery-item.center .gallery-item-wrapper {
+                height: 380px;
+            }
+
+            .gallery-dots {
+                margin-top: 20px;
+            }
+
+            .contact-item {
+                padding: 15px 18px;
+            }
+
+            .contact-icon {
+                font-size: 1.3rem;
+                min-width: 28px;
+            }
+
+            .contact-details h3 {
+                font-size: 1rem;
+                margin-bottom: 6px;
+            }
+
+            .contact-details p {
+                font-size: 0.9rem;
+                line-height: 1.5;
             }
 
             .service-card,
@@ -822,24 +1086,24 @@
                 padding: 30px 20px;
             }
 
-            section {
-                padding: 50px 0;
-            }
-
-            .scroll-to-top {
-                bottom: 20px;
-                right: 20px;
-                width: 45px;
-                height: 45px;
-                font-size: 1.2rem;
-            }
-
             .map-container {
                 height: 350px;
             }
 
-            .contact-item {
-                padding: 20px;
+            .whatsapp-float {
+                bottom: 80px;
+                right: 15px;
+                width: 55px;
+                height: 55px;
+                font-size: 1.8rem;
+            }
+
+            .scroll-to-top {
+                bottom: 20px;
+                right: 15px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -857,10 +1121,13 @@
         <a href="tel:7008162922">📞 7008162922</a>
     </div>
 
+    <!-- Sticky CTA Button -->
+    <a href="#contact" class="sticky-cta" id="stickyCta">Schedule Your Consultation</a>
+
     <!-- Header -->
     <header>
         <img src="Brand logo.jpg" alt="Sahu Eye Centre Logo" class="header-logo">
-        <a href="#contact" class="cta-button">Book Appointment</a>
+        <a href="#contact" class="header-cta">Schedule Your Consultation</a>
         <div class="header-content">
             <h1>Dr. Purna Chandra Sahu</h1>
             <p class="subtitle">MS, Ex-CDMO Sambalpur, Odisha</p>
@@ -871,38 +1138,64 @@
     <nav>
         <div class="container">
             <ul>
+                <li><a href="#hero">Meet the Doctor</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Optical Gallery</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#faq">Patient Education</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#faq">FAQ</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Meet the Doctor Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Advanced Eye Care Rooted in Decades of Experience</h1>
+                    <p class="hero-subtitle">Led by Dr. Purna Chandra Sahu, MS (Ex-CDMO)</p>
+                    <p class="hero-description">
+                        With over 40+ years of distinguished service in ophthalmology and public health, Dr. Purna Chandra Sahu brings unparalleled expertise to every consultation. His tenure as Chief District Medical Officer (CDMO) of Sambalpur, combined with his Master of Surgery (MS) in Ophthalmology, establishes him as a trusted authority in eye care across Odisha.
+                    </p>
+                    <div class="trust-badges">
+                        <div class="trust-badge">
+                            <strong>40+</strong>
+                            <span>Years Experience</span>
+                        </div>
+                        <div class="trust-badge">
+                            <strong>MS</strong>
+                            <span>Ophthalmology</span>
+                        </div>
+                        <div class="trust-badge">
+                            <strong>Ex-CDMO</strong>
+                            <span>Sambalpur</span>
+                        </div>
+                    </div>
+                </div>
+                <img src="Dr. P C Sahu Image closeup square.jpeg" alt="Dr. Purna Chandra Sahu" class="hero-image">
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About</h2>
+            <h2 class="section-title">Legacy of Trust in Odisha</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <p><strong>Sahu Eye Centre & Optical</strong> – Trusted Eye Care in Sundargarh</p>
-                    <p>Dr. Purna Chandra Sahu (MS, Eye Specialist, Ex-CDMO, Sambalpur) is a distinguished ophthalmologist with extensive experience in eye care and vision health. Having served as the Chief District Medical Officer (CDMO), Dr. Sahu brings a wealth of knowledge and expertise to his practice.</p>
-                    <p>Led by Dr. P C Sahu, we provide reliable eye check-ups, treatment for common eye problems, and a wide range of spectacles and lenses at affordable prices. Located opposite Chhabi Hotel, Bijaya Talkies Road, Sundargarh, we offer personal care and honest advice for every patient.</p>
-                    <p>With a commitment to providing exceptional eye care services, Dr. Sahu specializes in diagnosing and treating various eye conditions, ensuring the best possible outcomes for his patients. Visit us for vision testing, red eye treatment, cataract care, and more. Quality eyewear for all ages also available.</p>
-                </div>
-                <img src="Dr. P C Sahu Image closeup.jpeg" alt="Dr. Purna Chandra Sahu" class="about-image">
-            </div>
-            
-            <div class="about-additional">
-                <img src="Doctor PC Sahu seeing patient - 1.jpeg" alt="Dr. Purna Chandra Sahu with Patient" class="about-image-full">
-                <div class="about-additional-text">
-                    <p>At Sahu Eye Centre & Optical, we believe in providing personalized care to each patient. Dr. Purna Chandra Sahu takes time to understand every patient's unique needs and concerns, ensuring a comfortable and thorough examination experience.</p>
-                    <p>Our clinic is equipped with modern diagnostic equipment to provide accurate assessments and effective treatments. We maintain the highest standards of medical care while ensuring affordability for all our patients.</p>
-                    <p>Whether you need a routine eye examination, treatment for an eye condition, or quality eyewear, our team is dedicated to helping you achieve optimal eye health and clear vision.</p>
-                    <p><strong>Important Note:</strong> Dr. P. C. Sahu does not consult at any other clinic. Beware of fraud. For authentic consultation, please visit our clinic at the address mentioned below.</p>
-                </div>
-            </div>
+    <div class="about-text">
+        <h3 class="legacy-heading">A Compassionate, Authoritative, and Community-Oriented Approach</h3>
+        <p>Dr. Purna Chandra Sahu's journey in ophthalmology spans over four decades, marked by excellence, compassion, and an unwavering commitment to patient care. Having served as the Chief District Medical Officer (CDMO) of Sambalpur, Dr. Sahu brings a unique perspective that combines administrative excellence with clinical expertise.</p>
+        <p>His Master of Surgery (MS) degree in Ophthalmology, earned from prestigious Burla Medical College, reflects his dedication to mastering the art and science of eye care. This extensive training, combined with years of hands-on experience, enables Dr. Sahu to diagnose and treat a wide spectrum of eye conditions with precision and care.</p>
+        <p>At Sahu Eye Centre & Optical, we believe that every patient deserves personalized attention. Dr. Sahu takes time to understand each patient's unique concerns, explaining complex medical conditions in simple, understandable language. This patient-centered approach, rooted in decades of experience, has made our clinic a trusted name in Sundargarh and beyond.</p>
+        <p><strong>Important Note:</strong> Dr. P. C. Sahu only consults at Sahu Eye Centre & Optical. Beware of fraud and ensure you visit our official clinic for authentic consultation.</p>
+    </div>
+    <div class="about-side-images">
+        <img src="Doctor PC Sahu seeing patient.jpeg" alt="Patient Exam 1" class="about-image">
+        <img src="Doctor PC Sahu seeing patient - 1.jpeg" alt="Patient Exam 2" class="about-image">
+    </div>
+</div>
         </div>
     </section>
 
@@ -911,36 +1204,74 @@
         <div class="container">
             <h2 class="section-title">Our Services</h2>
             <div class="services-grid">
-                <div class="service-card" data-description="Complete eye health evaluation and vision assessment">
-                    <div class="service-icon">👁️</div>
-                    <h3>Comprehensive Eye Examination</h3>
-                    <p>Thorough evaluation of eye health and vision assessment</p>
+                <div class="service-card">
+                    <img src="Dr. P C Sahu Image closeup square.jpeg" alt="Cataract Surgery" class="service-image">
+                    <h3>Cataract Surgery</h3>
+                    <p>Expert diagnosis and surgical treatment for cataracts, ensuring clear vision restoration with modern techniques and compassionate care.</p>
+                    <a href="#contact" class="learn-more">Learn More →</a>
                 </div>
-                <div class="service-card" data-description="Expert diagnosis and treatment of eye conditions">
-                    <div class="service-icon">🔬</div>
-                    <h3>Diagnosis & Treatment</h3>
-                    <p>Expert diagnosis and treatment of various eye conditions</p>
+                <div class="service-card">
+                    <img src="Doctor PC Sahu seeing patient.jpeg" alt="Glaucoma Management" class="service-image">
+                    <h3>Glaucoma Management</h3>
+                    <p>Comprehensive screening, early detection, and effective management of glaucoma to prevent vision loss and preserve eye health.</p>
+                    <a href="#contact" class="learn-more">Learn More →</a>
                 </div>
-                <div class="service-card" data-description="Non-surgical treatment options for eye diseases">
-                    <div class="service-icon">💊</div>
-                    <h3>Medical Management</h3>
-                    <p>Non-surgical treatment options for eye diseases</p>
+                <div class="service-card">
+                    <img src="Doctor PC Sahu seeing patient - 1.jpeg" alt="Vision Testing" class="service-image">
+                    <h3>Vision Testing</h3>
+                    <p>Thorough eye examinations using modern diagnostic equipment to assess vision, detect refractive errors, and identify eye conditions early.</p>
+                    <a href="#contact" class="learn-more">Learn More →</a>
                 </div>
-                <div class="service-card" data-description="Prescription glasses and contact lens fitting">
-                    <div class="service-icon">👓</div>
-                    <h3>Vision Care & Optical</h3>
-                    <p>Wide range of spectacles and lenses at affordable prices</p>
+                <div class="service-card">
+                    <img src="Optical range:collection.jpeg" alt="Optical Gallery" class="service-image">
+                    <h3>Optical Gallery</h3>
+                    <p>Premium frames and lenses for all ages. Wide selection of stylish eyewear at affordable prices, ensuring both quality and style.</p>
+                    <a href="#gallery" class="learn-more">View Gallery →</a>
                 </div>
-                <div class="service-card" data-description="Regular check-ups and preventive eye care">
-                    <div class="service-icon">🏥</div>
-                    <h3>Preventive Care</h3>
-                    <p>Regular check-ups and preventive eye care services</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Optical Gallery -->
+    <section id="gallery" class="optical-gallery">
+        <div class="container">
+            <h2 class="section-title">Optical Gallery</h2>
+            <div class="gallery-container">
+                <div class="gallery-carousel">
+                    <div class="gallery-track" id="galleryTrack">
+                        <div class="gallery-item" data-index="0">
+                            <div class="gallery-item-wrapper">
+                                <img src="Optical range:collection.jpeg" alt="Premium Eyewear Collection">
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-index="1">
+                            <div class="gallery-item-wrapper">
+                                <img src="Optical range:collection - 1.jpeg" alt="Stylish Frames Collection">
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-index="2">
+                            <div class="gallery-item-wrapper">
+                                <img src="Location.jpeg" alt="Optical Showcase">
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-index="3">
+                            <div class="gallery-item-wrapper">
+                                <img src="Location 1.jpeg" alt="Frame Selection">
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-index="4">
+                            <div class="gallery-item-wrapper">
+                                <img src="Doctor PC Sahu seeing patient.jpeg" alt="Doctor Consultation">
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-index="5">
+                            <div class="gallery-item-wrapper">
+                                <img src="Doctor PC Sahu seeing patient - 1.jpeg" alt="Patient Examination">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card" data-description="Comprehensive guidance on eye health">
-                    <div class="service-icon">❤️</div>
-                    <h3>Patient Counseling</h3>
-                    <p>Personal care and honest advice for every patient</p>
-                </div>
+                <div class="gallery-dots" id="galleryDots"></div>
             </div>
         </div>
     </section>
@@ -964,6 +1295,51 @@
                     <div class="testimonial-rating">★★★★★</div>
                     <p class="testimonial-text">"By looking at few negative reviews I was bit confused to visit or not. But some friends recommended and finally I visited the clinic for an eye infection. I was amazed by the service and politeness of staff over there. Doctor Sahu heard my problem with patience. Overall great experience."</p>
                     <p class="testimonial-author">- Biswakalyan Mohanty</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Education / FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Patient Education</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">When should I get a cataract check-up?</div>
+                    <div class="faq-answer">
+                        <p>If you're experiencing blurred vision, difficulty seeing at night, sensitivity to light, or seeing halos around lights, it's time for a cataract evaluation. We recommend regular eye exams every 1-2 years after age 40, and more frequently if you have diabetes or a family history of eye conditions. Early detection allows for better treatment outcomes.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What are the early signs of glaucoma?</div>
+                    <div class="faq-answer">
+                        <p>Glaucoma is often called the "silent thief of sight" because it may have no symptoms in early stages. However, warning signs can include gradual loss of peripheral vision, tunnel vision, eye pain, headache, blurred vision, or halos around lights. Regular comprehensive eye exams are crucial, especially if you're over 40, have a family history, or have diabetes.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How often should I have my eyes examined?</div>
+                    <div class="faq-answer">
+                        <p>Adults should have a comprehensive eye exam every 1-2 years, depending on age and risk factors. Children should be examined at 6 months, 3 years, and before starting school. If you have diabetes, a family history of eye disease, or wear glasses/contacts, more frequent exams may be necessary. Dr. Sahu will recommend a schedule based on your individual needs.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What eye conditions do you treat?</div>
+                    <div class="faq-answer">
+                        <p>We treat a comprehensive range of eye conditions including cataracts, glaucoma, diabetic retinopathy, macular degeneration, dry eyes, red eyes, refractive errors (nearsightedness, farsightedness, astigmatism), and other common eye problems. We also provide routine eye examinations and vision testing for all ages.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do you provide spectacles and contact lenses?</div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer a wide range of premium spectacles and contact lenses at affordable prices. Our optical gallery features stylish frames for all ages, and our team helps you choose the best option for your prescription, lifestyle, and budget. Quality eyewear is essential for clear vision and eye health.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What makes Dr. Sahu's clinic different?</div>
+                    <div class="faq-answer">
+                        <p>Dr. Purna Chandra Sahu's extensive experience as Ex-CDMO and MS in Ophthalmology, combined with personalized patient care, modern diagnostic equipment, and affordable pricing, makes us a trusted choice. Dr. Sahu takes time to explain conditions in simple terms, ensuring patients understand their eye health. We believe in honest, transparent care for every patient.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1009,57 +1385,16 @@
                     </div>
                 </div>
                 <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.1234567890123!2d84.037608!3d22.1175468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a20edc6778786d3%3A0xf51d3b62454dd505!2sSahu%20Eye%20Centre%20%26%20Optical!5e0!3m2!1sen!2sin!4v1736500000000!5m2!1sen!2sin&q=22.1175468,84.037608" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="faq">
-        <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">What eye conditions do you treat?</div>
-                    <div class="faq-answer">
-                        <p>We treat a wide range of eye conditions including refractive errors, cataracts, glaucoma, diabetic retinopathy, dry eyes, red eyes, and other common eye problems. We also provide comprehensive eye examinations and vision testing.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Do you provide spectacles and contact lenses?</div>
-                    <div class="faq-answer">
-                        <p>Yes, we offer a wide range of spectacles and contact lenses at affordable prices. We have quality eyewear for all ages, and our team will help you choose the best option for your needs.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">What are your consultation hours?</div>
-                    <div class="faq-answer">
-                        <p>We are open Monday to Sunday from 10:00 AM - 1:00 PM and 6:00 PM - 8:00 PM. You can call us to book an appointment or walk in during these hours.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Do I need an appointment?</div>
-                    <div class="faq-answer">
-                        <p>While appointments are recommended for better service, we also accept walk-in patients during our consultation hours. Calling ahead helps us serve you better.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Is Dr. P. C. Sahu available at other clinics?</div>
-                    <div class="faq-answer">
-                        <p>No, Dr. P. C. Sahu only consults at Sahu Eye Centre & Optical, located at Infront of Chhabi Hotel, Bijaya Talkies Rd, Sundargarh. Please beware of fraud and only visit our official clinic.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">What makes your clinic different?</div>
-                    <div class="faq-answer">
-                        <p>Dr. Purna Chandra Sahu's extensive experience as Ex-CDMO and MS in Ophthalmology, combined with personalized patient care, modern equipment, and affordable pricing, makes us a trusted choice for eye care in Sundargarh.</p>
-                    </div>
+                    <a href="https://maps.google.com/?q=22.1175468,84.037608" target="_blank" style="display: block; width: 100%; height: 100%; position: relative;">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.1234567890123!2d84.037608!3d22.1175468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a20edc6778786d3%3A0xf51d3b62454dd505!2sSahu%20Eye%20Centre%20%26%20Optical!5e0!3m2!1sen!2sin!4v1736500000000!5m2!1sen!2sin&q=22.1175468,84.037608" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            style="pointer-events: none;">
+                        </iframe>
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; cursor: pointer;" onclick="window.open('https://maps.google.com/?q=22.1175468,84.037608', '_blank')"></div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1076,17 +1411,25 @@
                     <p>Phone: <a href="tel:7854070264" style="color: white;">7854070264</a> | <a href="tel:9338474882" style="color: white;">9338474882</a> | <a href="tel:7008162922" style="color: white;">7008162922</a></p>
                     <p>Email: <a href="mailto:sahueyecentre@gmail.com" style="color: white;">sahueyecentre@gmail.com</a></p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">f</a>
-                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">📷</a>
                         <a href="https://wa.me/917854070264" target="_blank" aria-label="WhatsApp">💬</a>
-                        <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">in</a>
                     </div>
                 </div>
                 <div class="footer-info">
                     <p><strong>Consultation Hours</strong></p>
-                    <p>Monday to Sunday</p>
-                    <p>10:00 AM - 1:00 PM</p>
-                    <p>6:00 PM - 8:00 PM</p>
+                    <div class="consultation-hours">
+                        <div class="hours-row">
+                            <span class="hours-icon">📅</span>
+                            <span class="hours-text">Monday to Sunday</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="hours-icon">🌅</span>
+                            <span class="hours-text">Morning: <span class="hours-time">10:00 AM - 1:00 PM</span></span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="hours-icon">🌆</span>
+                            <span class="hours-text">Evening: <span class="hours-time">6:00 PM - 8:00 PM</span></span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -1099,6 +1442,9 @@
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">↑</button>
 
+    <!-- WhatsApp Floating Icon -->
+    <a href="https://wa.me/917854070264" target="_blank" class="whatsapp-float" aria-label="Contact on WhatsApp">💬</a>
+
     <script>
         // Loading Animation
         window.addEventListener('load', function() {
@@ -1106,6 +1452,16 @@
             setTimeout(() => {
                 loader.classList.add('hidden');
             }, 500);
+        });
+
+        // Sticky CTA Button
+        const stickyCta = document.getElementById('stickyCta');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
         });
 
         // Smooth scrolling for navigation links
@@ -1124,7 +1480,6 @@
 
         // Scroll to Top Button
         const scrollToTopBtn = document.getElementById('scrollToTop');
-        
         window.addEventListener('scroll', function() {
             if (window.pageYOffset > 300) {
                 scrollToTopBtn.classList.add('visible');
@@ -1146,17 +1501,173 @@
                 const faqItem = this.parentElement;
                 const isActive = faqItem.classList.contains('active');
                 
-                // Close all FAQ items
                 document.querySelectorAll('.faq-item').forEach(item => {
                     item.classList.remove('active');
                 });
                 
-                // Open clicked item if it wasn't active
                 if (!isActive) {
                     faqItem.classList.add('active');
                 }
             });
         });
+
+        // Gallery Carousel - Moving all images 100% horizontally every 2 seconds with infinite loop
+        (function() {
+            const galleryTrack = document.getElementById('galleryTrack');
+            const galleryDots = document.getElementById('galleryDots');
+            const originalItems = Array.from(galleryTrack.querySelectorAll('.gallery-item'));
+            const totalItems = originalItems.length;
+            
+            // Clone first and last items for infinite loop
+            const firstClone = originalItems[0].cloneNode(true);
+            const lastClone = originalItems[totalItems - 1].cloneNode(true);
+            galleryTrack.insertBefore(lastClone, originalItems[0]);
+            galleryTrack.appendChild(firstClone);
+            
+            // Get all items including clones
+            const items = Array.from(galleryTrack.querySelectorAll('.gallery-item'));
+            let currentIndex = 1; // Start at first real item (after clone)
+            let autoPlayInterval;
+            let isPaused = false;
+            let isTransitioning = false;
+
+            // Create dots (only for original items)
+            originalItems.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.className = 'gallery-dot' + (index === 0 ? ' active' : '');
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                });
+                galleryDots.appendChild(dot);
+            });
+
+            function updateCarousel(disableTransition = false) {
+                if (disableTransition) {
+                    galleryTrack.style.transition = 'none';
+                } else {
+                    galleryTrack.style.transition = 'transform 0.6s ease-in-out';
+                }
+
+                // Calculate indices for left, center, and right items
+                const leftIndex = (currentIndex - 1 + items.length) % items.length;
+                const centerIndex = currentIndex;
+                const rightIndex = (currentIndex + 1) % items.length;
+
+                // Update classes for left, center, right
+                items.forEach((item, index) => {
+                    item.classList.remove('left', 'center', 'right');
+                    
+                    if (index === centerIndex) {
+                        item.classList.add('center');
+                    } else if (index === leftIndex) {
+                        item.classList.add('left');
+                    } else if (index === rightIndex) {
+                        item.classList.add('right');
+                    }
+                });
+
+                // Move track horizontally by 33.333% (one image width) for each step
+                const offset = -currentIndex * 33.333;
+                galleryTrack.style.transform = `translateX(${offset}%)`;
+
+                // Update dots (map currentIndex to original index)
+                // currentIndex 0 = lastClone (show last dot)
+                // currentIndex 1-6 = real items 0-5 (show corresponding dot)
+                // currentIndex 7 = firstClone (show first dot)
+                let originalIndex;
+                if (currentIndex === 0) {
+                    originalIndex = totalItems - 1; // Last item
+                } else if (currentIndex >= items.length - 1) {
+                    originalIndex = 0; // First item
+                } else {
+                    originalIndex = currentIndex - 1; // Real items
+                }
+                galleryDots.querySelectorAll('.gallery-dot').forEach((dot, index) => {
+                    dot.classList.toggle('active', index === originalIndex);
+                });
+            }
+
+            function goToSlide(originalIndex) {
+                currentIndex = originalIndex + 1; // +1 because of clone at start
+                updateCarousel();
+                resetAutoPlay();
+            }
+
+            function nextSlide() {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                
+                currentIndex++;
+                
+                // Structure: [lastClone(0), item0(1), item1(2), item2(3), item3(4), item4(5), item5(6), firstClone(7)]
+                // When currentIndex reaches 7 (firstClone), we need to seamlessly loop back
+                if (currentIndex >= items.length - 1) {
+                    // Show the clone first with transition
+                    updateCarousel();
+                    setTimeout(() => {
+                        // Disable transition and instantly jump back to first real item
+                        galleryTrack.style.transition = 'none';
+                        currentIndex = 1; // Reset to first real item
+                        const offset = -currentIndex * 33.333;
+                        galleryTrack.style.transform = `translateX(${offset}%)`;
+                        
+                        // Update classes
+                        const leftIndex = (currentIndex - 1 + items.length) % items.length;
+                        const centerIndex = currentIndex;
+                        const rightIndex = (currentIndex + 1) % items.length;
+                        
+                        items.forEach((item, index) => {
+                            item.classList.remove('left', 'center', 'right');
+                            if (index === centerIndex) {
+                                item.classList.add('center');
+                            } else if (index === leftIndex) {
+                                item.classList.add('left');
+                            } else if (index === rightIndex) {
+                                item.classList.add('right');
+                            }
+                        });
+                        
+                        // Update dots
+                        galleryDots.querySelectorAll('.gallery-dot').forEach((dot, index) => {
+                            dot.classList.toggle('active', index === 0);
+                        });
+                        
+                        // Re-enable transition after a brief moment
+                        setTimeout(() => {
+                            galleryTrack.style.transition = 'transform 0.6s ease-in-out';
+                            isTransitioning = false;
+                        }, 50);
+                    }, 600); // Wait for transition to complete
+                } else {
+                    updateCarousel();
+                    setTimeout(() => {
+                        isTransitioning = false;
+                    }, 600);
+                }
+            }
+
+            function resetAutoPlay() {
+                clearInterval(autoPlayInterval);
+                if (!isPaused) {
+                    autoPlayInterval = setInterval(nextSlide, 2000); // 2 seconds
+                }
+            }
+
+            // Initialize
+            updateCarousel();
+            resetAutoPlay();
+
+            // Pause on hover
+            galleryTrack.addEventListener('mouseenter', () => {
+                isPaused = true;
+                clearInterval(autoPlayInterval);
+            });
+            
+            galleryTrack.addEventListener('mouseleave', () => {
+                isPaused = false;
+                resetAutoPlay();
+            });
+        })();
     </script>
 </body>
 </html>
