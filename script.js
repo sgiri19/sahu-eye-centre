@@ -6,7 +6,7 @@
 // ============================================
 // LOADING ANIMATION
 // ============================================
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     const loader = document.getElementById('loader');
     setTimeout(() => {
         loader.classList.add('hidden');
@@ -19,16 +19,16 @@ window.addEventListener('load', function() {
 const stickyCta = document.getElementById('stickyCta');
 let lastScrollY = window.pageYOffset;
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const currentScrollY = window.pageYOffset;
-    
+
     // Show/hide sticky CTA
     if (currentScrollY > 300) {
         stickyCta.classList.add('visible');
     } else {
         stickyCta.classList.remove('visible');
     }
-    
+
     lastScrollY = currentScrollY;
 }, { passive: true });
 
@@ -38,12 +38,12 @@ window.addEventListener('scroll', function() {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href');
-        
+
         // Don't prevent default for external links or javascript: links
         if (targetId === '#' || targetId.startsWith('javascript:')) {
             return;
         }
-        
+
         const target = document.querySelector(targetId);
         if (target) {
             e.preventDefault();
@@ -51,7 +51,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth',
                 block: 'start'
             });
-            
+
             // Update focus for accessibility
             target.setAttribute('tabindex', '-1');
             target.focus();
@@ -64,7 +64,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ============================================
 const scrollToTopBtn = document.getElementById('scrollToTop');
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     if (window.pageYOffset > 300) {
         scrollToTopBtn.classList.add('visible');
     } else {
@@ -72,7 +72,7 @@ window.addEventListener('scroll', function() {
     }
 }, { passive: true });
 
-scrollToTopBtn.addEventListener('click', function() {
+scrollToTopBtn.addEventListener('click', function () {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -83,26 +83,26 @@ scrollToTopBtn.addEventListener('click', function() {
 // FAQ ACCORDION
 // ============================================
 document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', function() {
+    question.addEventListener('click', function () {
         const faqItem = this.parentElement;
         const isActive = faqItem.classList.contains('active');
-        
+
         // Close all FAQ items
         document.querySelectorAll('.faq-item').forEach(item => {
             item.classList.remove('active');
             const btn = item.querySelector('.faq-question');
             btn.setAttribute('aria-expanded', 'false');
         });
-        
+
         // Open clicked item if it wasn't active
         if (!isActive) {
             faqItem.classList.add('active');
             this.setAttribute('aria-expanded', 'true');
         }
     });
-    
+
     // Keyboard support for FAQ
-    question.addEventListener('keydown', function(e) {
+    question.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             this.click();
@@ -113,18 +113,18 @@ document.querySelectorAll('.faq-question').forEach(question => {
 // ============================================
 // GALLERY CAROUSEL
 // ============================================
-(function() {
+(function () {
     const galleryTrack = document.getElementById('galleryTrack');
     const galleryDots = document.getElementById('galleryDots');
     const originalItems = Array.from(galleryTrack.querySelectorAll('.gallery-item'));
     const totalItems = originalItems.length;
-    
+
     // Clone first and last items for infinite loop
     const firstClone = originalItems[0].cloneNode(true);
     const lastClone = originalItems[totalItems - 1].cloneNode(true);
     galleryTrack.insertBefore(lastClone, originalItems[0]);
     galleryTrack.appendChild(firstClone);
-    
+
     // Get all items including clones
     const items = Array.from(galleryTrack.querySelectorAll('.gallery-item'));
     let currentIndex = 1; // Start at first real item (after clone)
@@ -162,7 +162,7 @@ document.querySelectorAll('.faq-question').forEach(question => {
         // Update classes for left, center, right
         items.forEach((item, index) => {
             item.classList.remove('left', 'center', 'right');
-            
+
             if (index === centerIndex) {
                 item.classList.add('center');
             } else if (index === leftIndex) {
@@ -185,7 +185,7 @@ document.querySelectorAll('.faq-question').forEach(question => {
         } else {
             originalIndex = currentIndex - 1;
         }
-        
+
         dots.forEach((dot, index) => {
             const isActive = index === originalIndex;
             dot.classList.toggle('active', isActive);
@@ -202,9 +202,9 @@ document.querySelectorAll('.faq-question').forEach(question => {
     function nextSlide() {
         if (isTransitioning) return;
         isTransitioning = true;
-        
+
         currentIndex++;
-        
+
         // When reaching the clone at the end
         if (currentIndex >= items.length - 1) {
             updateCarousel();
@@ -213,12 +213,12 @@ document.querySelectorAll('.faq-question').forEach(question => {
                 currentIndex = 1;
                 const offset = -currentIndex * 33.333;
                 galleryTrack.style.transform = `translateX(${offset}%)`;
-                
-                // Update classes
+
+                // Update classes instantly for seamless loop
                 const leftIndex = (currentIndex - 1 + items.length) % items.length;
                 const centerIndex = currentIndex;
                 const rightIndex = (currentIndex + 1) % items.length;
-                
+
                 items.forEach((item, index) => {
                     item.classList.remove('left', 'center', 'right');
                     if (index === centerIndex) {
@@ -229,17 +229,18 @@ document.querySelectorAll('.faq-question').forEach(question => {
                         item.classList.add('right');
                     }
                 });
-                
+
                 // Update dots
                 dots.forEach((dot, index) => {
                     dot.classList.toggle('active', index === 0);
                     dot.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
                 });
-                
+
+                // Re-enable transition almost immediately for next slide
                 setTimeout(() => {
                     galleryTrack.style.transition = 'transform 0.6s ease-in-out';
                     isTransitioning = false;
-                }, 50);
+                }, 20);
             }, 600);
         } else {
             updateCarousel();
@@ -265,7 +266,7 @@ document.querySelectorAll('.faq-question').forEach(question => {
         isPaused = true;
         clearInterval(autoPlayInterval);
     });
-    
+
     galleryTrack.addEventListener('mouseleave', () => {
         isPaused = false;
         resetAutoPlay();
@@ -294,7 +295,7 @@ if ('loading' in HTMLImageElement.prototype) {
 } else {
     // Fallback for older browsers
     const images = document.querySelectorAll('img[loading="lazy"]');
-    
+
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -313,13 +314,13 @@ if ('loading' in HTMLImageElement.prototype) {
 // PERFORMANCE MONITORING (Development only)
 // ============================================
 if (window.performance && window.performance.timing) {
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
         setTimeout(() => {
             const perfData = window.performance.timing;
             const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
             const connectTime = perfData.responseEnd - perfData.requestStart;
             const renderTime = perfData.domComplete - perfData.domLoading;
-            
+
             console.log('Performance Metrics:');
             console.log(`Page Load Time: ${pageLoadTime}ms`);
             console.log(`Server Response Time: ${connectTime}ms`);
