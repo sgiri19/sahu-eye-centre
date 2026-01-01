@@ -176,37 +176,42 @@
     </div>
 
     <!-- Sticky CTA Button -->
-    <a href="#contact" class="sticky-cta" id="stickyCta" aria-label="Schedule your consultation">
+    <a href="https://wa.me/917854070264?text=Hi%2C%20I%20would%20like%20to%20schedule%20a%20consultation%20at%20Sahu%20Eye%20Centre"
+        class="sticky-cta" id="stickyCta" aria-label="Schedule your consultation via WhatsApp" target="_blank"
+        rel="noopener">
         Schedule Your Consultation
     </a>
 
-    <!-- Header -->
-    <header role="banner">
-        <img src="images/logo/logo.webp" alt="Sahu Eye Centre & Optical Logo" class="header-logo" width="200"
-            height="auto">
-        <a href="#contact" class="header-cta" aria-label="Schedule your consultation">
-            Schedule Your Consultation
-        </a>
-        <div class="header-content">
-            <h1>Dr. Purna Chandra Sahu</h1>
-            <p class="subtitle">MS, Ex-CDMO Sambalpur, Odisha</p>
+    <!-- Modern Sticky Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="images/logo/logo.webp" alt="Sahu Eye Centre">
+                <div class="logo-text">
+                    <span class="dr-name">Dr. P.C. Sahu</span>
+                    <span class="clinic-sub">Ex-CDMO | Eye Specialist</span>
+                </div>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Navigation -->
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="https://wa.me/917854070264?text=Hi%2C%20I%20would%20like%20to%20schedule%20a%20consultation%20at%20Sahu%20Eye%20Centre"
+                            class="nav-cta" target="_blank" rel="noopener">Book Appointment</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-
-    <!-- Navigation -->
-    <nav role="navigation" aria-label="Main navigation">
-        <div class="container">
-            <ul>
-                <li><a href="#hero">Meet the Doctor</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#gallery">Optical Gallery</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#faq">Patient Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
     <!-- Main Content -->
     <main id="main-content">
@@ -216,7 +221,7 @@
                 <div class="hero-content">
                     <div class="hero-text">
                         <h1>Advanced Eye Care Rooted in Decades of Experience</h1>
-                        <p class="hero-subtitle">Led by Dr. Purna Chandra Sahu, MS (Ex-CDMO)</p>
+                        <p class="hero-subtitle">Led by Dr. Purna Chandra Sahu,<br>MS (Ex-CDMO)</p>
                         <p class="hero-description">
                             With over 40+ years of distinguished service in ophthalmology and public health, Dr. Purna
                             Chandra Sahu brings unparalleled expertise to every consultation. His tenure as Chief
@@ -346,9 +351,7 @@
                             <img src="images/gallery/location-1.webp" alt="Optical showcase at Sahu Eye Centre"
                                 loading="lazy">
                         </div>
-                        <div class="swiper-slide">
-                            <img src="images/gallery/location-2.webp" alt="Frame selection area" loading="lazy">
-                        </div>
+
                         <div class="swiper-slide">
                             <img src="images/gallery/patient-care-1.webp" alt="Doctor consultation in progress"
                                 loading="lazy">
@@ -492,21 +495,24 @@
                 <h2 class="section-title">Contact</h2>
                 <div class="contact-content">
                     <div class="contact-info">
+                        <!-- Location Card -->
                         <div class="contact-item">
-                            <div class="contact-icon" aria-hidden="true">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
+                            <div class="contact-header">
+                                <i class="fas fa-map-marker-alt contact-icon-inline"></i>
                                 <h3>Location</h3>
-                                <p>Infront of Chhabi Hotel, Bijaya Talkies Rd, Sundargarh, Odisha 770001</p>
+                            </div>
+                            <div class="contact-content">
+                                <p>Infront of Chhabi Hotel, Bijaya Talkies Rd,<br>Sundargarh, Odisha 770001</p>
                             </div>
                         </div>
+
+                        <!-- Phone Card -->
                         <div class="contact-item">
-                            <div class="contact-icon" aria-hidden="true">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="contact-details">
+                            <div class="contact-header">
+                                <i class="fas fa-phone-alt contact-icon-inline"></i>
                                 <h3>Phone</h3>
+                            </div>
+                            <div class="contact-content">
                                 <div class="phone-numbers">
                                     <a href="tel:+917854070264">+91 7854070264</a>
                                     <a href="tel:+919338474882">+91 9338474882</a>
@@ -514,22 +520,25 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Consultation Hours Card -->
                         <div class="contact-item">
-                            <div class="contact-icon" aria-hidden="true">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Email</h3>
-                                <p><a href="mailto:sahueyecentre@gmail.com">sahueyecentre@gmail.com</a></p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon" aria-hidden="true">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-details">
+                            <div class="contact-header">
+                                <i class="fas fa-clock contact-icon-inline"></i>
                                 <h3>Consultation Hours</h3>
-                                <p>Monday to Sunday<br>10:00 AM - 1:00 PM<br>6:00 PM - 8:00 PM</p>
+                            </div>
+                            <div class="contact-content">
+                                <p class="days-text">Monday to Sunday</p>
+                                <div class="hours-flex">
+                                    <div class="hour-card">
+                                        <i class="fas fa-sun"></i>
+                                        <span><strong>Morning</strong><br>10 AM - 1 PM</span>
+                                    </div>
+                                    <div class="hour-card">
+                                        <i class="fas fa-moon"></i>
+                                        <span><strong>Evening</strong><br>6 PM - 8 PM</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -567,12 +576,7 @@
                             href="tel:+917008162922" style="color: white;">+91 7008162922</a></p>
                     <p>Email: <a href="mailto:sahueyecentre@gmail.com" style="color: white;">sahueyecentre@gmail.com</a>
                     </p>
-                    <div class="social-links">
-                        <a href="https://wa.me/917854070264" target="_blank" rel="noopener noreferrer"
-                            aria-label="Contact us on WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
+
                 </div>
                 <div class="footer-info">
                     <p><strong>Consultation Hours</strong></p>
@@ -604,11 +608,15 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- WhatsApp Floating Icon -->
-    <a href="https://wa.me/917854070264" target="_blank" rel="noopener noreferrer" class="whatsapp-float"
-        aria-label="Contact us on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+
+
+    <!-- Mobile Bottom Fixed Bar -->
+    <div class="mobile-bottom-bar">
+        <a href="https://wa.me/917854070264?text=Hi%2C%20I%20would%20like%20to%20schedule%20a%20consultation%20at%20Sahu%20Eye%20Centre"
+            target="_blank" rel="noopener" class="mobile-bottom-btn">
+            <i class="fab fa-whatsapp"></i> Book Appointment
+        </a>
+    </div>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

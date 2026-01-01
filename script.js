@@ -14,6 +14,43 @@ window.addEventListener('load', function () {
 });
 
 // ============================================
+// MOBILE NAVIGATION
+// ============================================
+document.addEventListener('DOMContentLoaded', function () {
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.getElementById('mainNav');
+    const navLinks = nav.querySelectorAll('a');
+
+    if (mobileBtn && nav) {
+        mobileBtn.addEventListener('click', function () {
+            const isExpanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+            mobileBtn.setAttribute('aria-expanded', !isExpanded);
+            nav.classList.toggle('active');
+
+            // Toggle icon
+            const icon = mobileBtn.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            }
+        });
+
+        // Close menu when clicking a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                mobileBtn.setAttribute('aria-expanded', 'false');
+                const icon = mobileBtn.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            });
+        });
+    }
+});
+
+// ============================================
 // STICKY CTA BUTTON
 // ============================================
 const stickyCta = document.getElementById('stickyCta');
