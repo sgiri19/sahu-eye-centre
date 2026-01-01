@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Main Page - UPDATE URL WHEN YOU HAVE YOUR DOMAIN -->
+    <url>
+        <loc>https://sgiri19.github.io/sahu-eye-centre/</loc>
+        <lastmod>2025-01-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        
+        <!-- Images for better SEO -->
+        <image:image>
+            <image:loc>https://sgiri19.github.io/sahu-eye-centre/images/hero/dr-sahu-hero.webp</image:loc>
+            <image:title>Dr. Purna Chandra Sahu - Ophthalmologist</image:title>
+            <image:caption>Experienced eye specialist in Sundargarh, Odisha</image:caption>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://sgiri19.github.io/sahu-eye-centre/images/gallery/location-1.webp</image:loc>
+            <image:title>Sahu Eye Centre & Optical Location</image:title>
+        </image:image>
+    </url>
+    
+    <!-- Add more pages here as you create them -->
+    <!-- Example:
+    <url>
+        <loc>https://sgiri19.github.io/sahu-eye-centre/services/cataract-surgery.html</loc>
+        <lastmod>2025-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    -->
+    
+</urlset>

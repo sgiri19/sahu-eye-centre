@@ -1,1133 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
     <!-- SEO Meta Tags -->
     <title>Dr. Purna Chandra Sahu - Best Eye Specialist & Ophthalmologist in Sundargarh, Odisha</title>
-    <meta name="description" content="Dr. Purna Chandra Sahu (MS, Ex-CDMO) - Trusted ophthalmologist in Sundargarh, Odisha. Expert eye care, vision testing, cataract treatment, and quality eyewear at Sahu Eye Centre & Optical. Book appointment today.">
-    <meta name="keywords" content="eye doctor, ophthalmologist, eye specialist, Sundargarh, Odisha, eye care, vision testing, cataract treatment, eye examination, spectacles, contact lenses, Dr. Purna Chandra Sahu, Sahu Eye Centre">
+    <meta name="description"
+        content="Dr. Purna Chandra Sahu (MS, Ex-CDMO) - Trusted ophthalmologist in Sundargarh, Odisha. Expert eye care, vision testing, cataract treatment, and quality eyewear at Sahu Eye Centre & Optical. Book appointment today.">
+    <meta name="keywords"
+        content="eye doctor, ophthalmologist, eye specialist, Sundargarh, Odisha, eye care, vision testing, cataract treatment, eye examination, spectacles, contact lenses, Dr. Purna Chandra Sahu, Sahu Eye Centre">
     <meta name="author" content="Sahu Eye Centre & Optical">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Dr. Purna Chandra Sahu - Best Eye Specialist in Sundargarh, Odisha">
-    <meta property="og:description" content="Expert eye care services by Dr. Purna Chandra Sahu (MS, Ex-CDMO). Comprehensive eye examinations, treatment, and quality eyewear at affordable prices.">
+    <meta name="theme-color" content="#0056b3">
+
+    <!-- Canonical URL - UPDATE WITH YOUR ACTUAL DOMAIN LATER -->
+    <link rel="canonical" href="https://sgiri19.github.io/sahu-eye-centre/">
+
+    <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
+    <meta property="og:title" content="Dr. Purna Chandra Sahu - Best Eye Specialist in Sundargarh, Odisha">
+    <meta property="og:description"
+        content="Expert eye care services by Dr. Purna Chandra Sahu (MS, Ex-CDMO). Comprehensive eye examinations, treatment, and quality eyewear at affordable prices.">
+    <meta property="og:image" content="https://sgiri19.github.io/sahu-eye-centre/og-image.jpg">
+    <meta property="og:url" content="https://sgiri19.github.io/sahu-eye-centre/">
+    <meta property="og:site_name" content="Sahu Eye Centre & Optical">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dr. Purna Chandra Sahu - Best Eye Specialist">
+    <meta name="twitter:description" content="Expert eye care services in Sundargarh, Odisha. 40+ years experience.">
+    <meta name="twitter:image" content="https://sgiri19.github.io/sahu-eye-centre/twitter-image.jpg">
+
+    <!-- Geo Tags -->
     <meta name="geo.region" content="IN-OR">
     <meta name="geo.placename" content="Sundargarh, Odisha">
-    
-    <!-- Fonts: Montserrat for headings, Inter for body -->
+    <meta name="geo.position" content="22.1175468;84.037608">
+    <meta name="ICBM" content="22.1175468, 84.037608">
+
+    <!-- Favicon - Multiple Sizes -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Preconnect to external domains for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* ============================================
-           COLOR PALETTE & TYPOGRAPHY
-           ============================================ */
-        :root {
-            --primary-blue: #0056b3;
-            --secondary-blue: #e3f2fd;
-            --text-dark: #1a1a1a;
-            --text-gray: #555;
-            --white: #ffffff;
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
-            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.7;
-            color: var(--text-dark);
-            background: var(--white);
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            color: var(--primary-blue);
-        }
-
-        /* Loading Animation */
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--white);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s, visibility 0.5s;
-        }
-
-        .loader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .loader-spinner {
-            width: 60px;
-            height: 60px;
-            border: 5px solid var(--secondary-blue);
-            border-top: 5px solid var(--primary-blue);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* ============================================
-           LAYOUT SYSTEM
-           ============================================ */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Quick Contact Bar */
-        .quick-contact {
-            background: var(--primary-blue);
-            color: var(--white);
-            padding: 12px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            font-size: 0.95rem;
-        }
-
-        .quick-contact a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.3s;
-        }
-
-        .quick-contact a:hover {
-            opacity: 0.85;
-        }
-
-        /* ============================================
-           STICKY CTA BUTTON
-           ============================================ */
-        .sticky-cta {
-            position: fixed;
-            top: 80px;
-            right: 30px;
-            padding: 14px 35px;
-            background: var(--primary-blue);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1rem;
-            font-family: 'Montserrat', sans-serif;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-md);
-            z-index: 98;
-            display: none;
-        }
-
-        .sticky-cta.visible {
-            display: block;
-        }
-
-        .sticky-cta:hover {
-            background: #004499;
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* ============================================
-           HEADER
-           ============================================ */
-        header {
-            position: relative;
-            width: 100%;
-            min-height: 200px;
-            background: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 30px 20px;
-            border-bottom: 2px solid var(--secondary-blue);
-        }
-
-        .header-logo {
-            position: absolute;
-            top: 50%;
-            left: 30px;
-            transform: translateY(-50%);
-            width: 200px;
-            height: auto;
-            z-index: 10;
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 3;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .header-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: var(--primary-blue);
-        }
-
-        .header-content .subtitle {
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: var(--primary-blue);
-            margin-bottom: 5px;
-        }
-
-        .header-cta {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            padding: 14px 35px;
-            background: var(--primary-blue);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1rem;
-            font-family: 'Montserrat', sans-serif;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-md);
-            z-index: 10;
-        }
-
-        .header-cta:hover {
-            background: #004499;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* ============================================
-           NAVIGATION
-           ============================================ */
-        nav {
-            background: var(--white);
-            box-shadow: var(--shadow-sm);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            padding: 20px 0;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--primary-blue);
-            font-weight: 600;
-            font-family: 'Montserrat', sans-serif;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        nav ul li a:hover {
-            color: #004499;
-        }
-
-        /* ============================================
-           SECTIONS - 80px SPACING
-           ============================================ */
-        section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            color: var(--primary-blue);
-            position: relative;
-            padding-bottom: 20px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--primary-blue);
-            border-radius: 2px;
-        }
-
-        /* ============================================
-           MEET THE DOCTOR HERO SECTION
-           ============================================ */
-        .hero {
-            background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--white) 100%);
-            padding: 100px 0;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero-text .hero-subtitle {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-        }
-
-        .hero-text .hero-description {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-gray);
-            margin-bottom: 30px;
-        }
-
-        .hero-text .trust-badges {
-            display: flex;
-            gap: 30px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .trust-badge {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .trust-badge strong {
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .trust-badge span {
-            font-size: 0.9rem;
-            color: var(--text-gray);
-        }
-
-        .hero-image {
-            width: 100%;
-            border-radius: 16px;
-            box-shadow: var(--shadow-lg);
-            object-fit: cover;
-            height: 500px;
-        }
-
-        /* ============================================
-           ABOUT SECTION
-           ============================================ */
-        .about {
-            background: var(--white);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
-            margin-bottom: 60px;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.9;
-            color: var(--text-gray);
-        }
-
-        .about-text p {
-            margin-bottom: 25px;
-        }
-
-        .about-text .legacy-heading {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            color: var(--primary-blue);
-            margin-bottom: 20px;
-        }
-
-        .about-image {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
-            object-fit: cover;
-            background: #f8f9fa;
-            height: auto;
-        }
-
-        .about-side-images {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .about-side-images .about-image {
-            min-height: 400px;
-        }
-
-        /* ============================================
-           SERVICES SECTION - SPECIFIC CARDS
-           ============================================ */
-        .services {
-            background: var(--secondary-blue);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .service-card {
-            background: var(--white);
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-sm);
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border-top: 4px solid var(--primary-blue);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .service-icon {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-
-        .service-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--primary-blue);
-        }
-
-        .service-card p {
-            color: var(--text-gray);
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .service-card .learn-more {
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        .service-card .learn-more:hover {
-            color: #004499;
-            text-decoration: underline;
-        }
-
-        /* ============================================
-           OPTICAL GALLERY CAROUSEL
-           ============================================ */
-        .optical-gallery {
-            background: var(--white);
-        }
-
-        .gallery-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-            padding: 40px 20px;
-        }
-
-        .gallery-carousel {
-            position: relative;
-            height: 500px;
-            overflow: hidden;
-            margin: 0 auto;
-        }
-
-        .gallery-track {
-            display: flex;
-            align-items: center;
-            height: 100%;
-            transition: transform 0.6s ease-in-out;
-            will-change: transform;
-        }
-
-        .gallery-item {
-            flex: 0 0 33.333%;
-            height: 100%;
-            padding: 0 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            box-sizing: border-box;
-        }
-
-        .gallery-item-wrapper {
-            width: 100%;
-            height: 450px;
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            transition: all 0.6s ease-in-out;
-        }
-
-        .gallery-item.left .gallery-item-wrapper,
-        .gallery-item.right .gallery-item-wrapper {
-            height: 380px;
-            opacity: 1;
-        }
-
-        .gallery-item.center .gallery-item-wrapper {
-            height: 480px;
-            opacity: 1;
-            z-index: 2;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Remove all gradients - no overlays on any images */
-        .gallery-item .gallery-item-wrapper::before,
-        .gallery-item .gallery-item-wrapper::after {
-            display: none !important;
-            content: none !important;
-            background: none !important;
-            background-image: none !important;
-        }
-
-        .gallery-dots {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 30px;
-        }
-
-        .gallery-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--secondary-blue);
-            border: 2px solid var(--primary-blue);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .gallery-dot.active {
-            background: var(--primary-blue);
-            transform: scale(1.2);
-        }
-
-        /* ============================================
-           TESTIMONIALS
-           ============================================ */
-        .testimonials {
-            background: var(--secondary-blue);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .testimonial-card {
-            background: var(--white);
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-sm);
-            border-left: 4px solid var(--primary-blue);
-        }
-
-        .testimonial-rating {
-            color: #ffa500;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
-
-        .testimonial-text {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: var(--text-gray);
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            color: var(--primary-blue);
-            font-weight: 600;
-            font-size: 1rem;
-        }
-
-        /* ============================================
-           PATIENT EDUCATION / FAQ
-           ============================================ */
-        .faq {
-            background: var(--white);
-        }
-
-        .faq-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: var(--secondary-blue);
-            margin-bottom: 20px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .faq-question {
-            padding: 25px 30px;
-            background: var(--primary-blue);
-            color: var(--white);
-            font-weight: 600;
-            font-size: 1.1rem;
-            font-family: 'Montserrat', sans-serif;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.3s;
-        }
-
-        .faq-question:hover {
-            background: #004499;
-        }
-
-        .faq-question::after {
-            content: '+';
-            font-size: 1.8rem;
-            font-weight: 300;
-            transition: transform 0.3s;
-        }
-
-        .faq-item.active .faq-question::after {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            padding: 0 30px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            padding: 25px 30px;
-            max-height: 500px;
-        }
-
-        .faq-answer p {
-            color: var(--text-gray);
-            line-height: 1.8;
-            font-size: 1.05rem;
-        }
-
-        /* ============================================
-           CONTACT SECTION
-           ============================================ */
-        .contact {
-            background: var(--secondary-blue);
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            padding: 18px 20px;
-            background: var(--white);
-            border-radius: 12px;
-            box-shadow: var(--shadow-sm);
-            border-left: 4px solid var(--primary-blue);
-            transition: all 0.3s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateX(5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .contact-icon {
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-            margin-top: 2px;
-            min-width: 30px;
-        }
-
-        .contact-details h3 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-        }
-
-        .contact-details p {
-            color: var(--text-gray);
-            line-height: 1.6;
-            font-size: 0.95rem;
-            margin: 0;
-        }
-
-        .contact-details a {
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .contact-details a:hover {
-            color: #004499;
-            text-decoration: underline;
-        }
-
-        .phone-numbers {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .map-container {
-            width: 100%;
-            height: 450px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            border: 3px solid var(--primary-blue);
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* ============================================
-           FOOTER
-           ============================================ */
-        footer {
-            background: var(--primary-blue);
-            color: var(--white);
-            padding: 60px 0 30px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 50px;
-            margin-bottom: 30px;
-        }
-
-        .footer-info p {
-            margin: 8px 0;
-            opacity: 0.95;
-            font-size: 1rem;
-            line-height: 1.8;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .social-links a {
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            text-decoration: none;
-            font-size: 1.3rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .footer-bottom p {
-            margin: 5px 0;
-            opacity: 0.9;
-            font-size: 0.95rem;
-        }
-
-        /* Scroll to Top Button */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--primary-blue);
-            color: var(--white);
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.5rem;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
-            z-index: 99;
-        }
-
-        .scroll-to-top:hover {
-            background: #004499;
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .scroll-to-top.visible {
-            display: flex;
-        }
-
-        /* WhatsApp Floating Icon */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: #25D366;
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            text-decoration: none;
-            box-shadow: var(--shadow-lg);
-            transition: all 0.3s ease;
-            z-index: 99;
-            animation: pulse 2s infinite;
-        }
-
-        .whatsapp-float:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            50% {
-                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
-            }
-        }
-
-        /* Consultation Hours Creative Display */
-        .consultation-hours {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .hours-row {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px 15px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            border-left: 3px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .hours-icon {
-            font-size: 1.2rem;
-        }
-
-        .hours-text {
-            flex: 1;
-        }
-
-        .hours-time {
-            font-weight: 600;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        /* ============================================
-           RESPONSIVE DESIGN
-           ============================================ */
-        @media (max-width: 1024px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .quick-contact {
-                font-size: 0.85rem;
-                padding: 10px 0;
-                gap: 15px;
-            }
-
-            .sticky-cta {
-                top: 70px;
-                right: 15px;
-                padding: 12px 25px;
-                font-size: 0.9rem;
-            }
-
-            header {
-                min-height: 180px;
-                padding: 15px;
-            }
-
-            .header-logo {
-                width: 120px;
-                top: 15px;
-                left: 15px;
-                transform: none;
-            }
-
-            .header-content {
-                padding-top: 80px;
-            }
-
-            .header-content h1 {
-                font-size: 1.8rem;
-            }
-
-            .header-content .subtitle {
-                font-size: 1rem;
-            }
-
-            .header-cta {
-                top: 15px;
-                right: 15px;
-                padding: 10px 20px;
-                font-size: 0.85rem;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-
-            .section-title {
-                font-size: 2rem;
-                margin-bottom: 40px;
-            }
-
-            .hero {
-                padding: 60px 0;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .hero-text h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-image {
-                height: 350px;
-            }
-
-            .about-content,
-            .contact-content,
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 15px;
-                padding: 15px 0;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .gallery-carousel {
-                height: 400px;
-            }
-
-            .gallery-item {
-                flex: 0 0 100%;
-            }
-
-            .gallery-item-wrapper {
-                height: 350px;
-            }
-
-            .gallery-item.left .gallery-item-wrapper,
-            .gallery-item.right .gallery-item-wrapper {
-                height: 280px;
-            }
-
-            .gallery-item.center .gallery-item-wrapper {
-                height: 380px;
-            }
-
-            .gallery-dots {
-                margin-top: 20px;
-            }
-
-            .contact-item {
-                padding: 15px 18px;
-            }
-
-            .contact-icon {
-                font-size: 1.3rem;
-                min-width: 28px;
-            }
-
-            .contact-details h3 {
-                font-size: 1rem;
-                margin-bottom: 6px;
-            }
-
-            .contact-details p {
-                font-size: 0.9rem;
-                line-height: 1.5;
-            }
-
-            .service-card,
-            .testimonial-card {
-                padding: 30px 20px;
-            }
-
-            .map-container {
-                height: 350px;
-            }
-
-            .whatsapp-float {
-                bottom: 80px;
-                right: 15px;
-                width: 55px;
-                height: 55px;
-                font-size: 1.8rem;
-            }
-
-            .scroll-to-top {
-                bottom: 20px;
-                right: 15px;
-                width: 45px;
-                height: 45px;
-                font-size: 1.3rem;
-            }
-        }
-    </style>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Optimized Font Loading - Reduced weights -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="images/hero/dr-sahu-hero.webp" as="image">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Schema.org Structured Data for Rich Results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "Sahu Eye Centre & Optical",
+      "image": [
+        "https://sgiri19.github.io/sahu-eye-centre/images/hero/dr-sahu-hero.webp",
+        "https://sgiri19.github.io/sahu-eye-centre/images/gallery/location-1.webp"
+      ],
+      "@id": "https://sgiri19.github.io/sahu-eye-centre/",
+      "url": "https://sgiri19.github.io/sahu-eye-centre/",
+      "telephone": "+91-7854070264",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Infront of Chhabi Hotel, Bijaya Talkies Rd",
+        "addressLocality": "Sundargarh",
+        "postalCode": "770001",
+        "addressRegion": "Odisha",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 22.1175468,
+        "longitude": 84.037608
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "10:00",
+          "closes": "13:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "18:00",
+          "closes": "20:00"
+        }
+      ],
+      "sameAs": [
+        "https://wa.me/917854070264"
+      ],
+      "physician": {
+        "@type": "Physician",
+        "name": "Dr. Purna Chandra Sahu",
+        "honorificSuffix": "MS",
+        "jobTitle": "Ophthalmologist",
+        "medicalSpecialty": "Ophthalmology",
+        "alumniOf": "Burla Medical College",
+        "description": "Ex-Chief District Medical Officer (CDMO) of Sambalpur with over 40 years of experience in ophthalmology"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "3"
+      }
+    }
+    </script>
+
+    <!-- Google Analytics - REPLACE G-XXXXXXXXXX with your actual GA4 ID -->
+    <!-- Uncomment when you have your GA4 ID
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
 </head>
+
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Loading Animation -->
-    <div class="loader" id="loader">
+    <div class="loader" id="loader" role="status" aria-label="Loading">
         <div class="loader-spinner"></div>
     </div>
 
     <!-- Quick Contact Bar -->
-    <div class="quick-contact">
-        <a href="tel:7854070264">📞 7854070264</a>
-        <a href="tel:9338474882">📞 9338474882</a>
-        <a href="tel:7008162922">📞 7008162922</a>
+    <div class="quick-contact" role="complementary" aria-label="Quick contact information">
+        <a href="tel:+917854070264" aria-label="Call us at 7854070264">
+            <i class="fas fa-phone-alt"></i> 7854070264
+        </a>
+        <a href="tel:+919338474882" aria-label="Call us at 9338474882">
+            <i class="fas fa-phone-alt"></i> 9338474882
+        </a>
+        <a href="tel:+917008162922" aria-label="Call us at 7008162922">
+            <i class="fas fa-phone-alt"></i> 7008162922
+        </a>
     </div>
 
     <!-- Sticky CTA Button -->
-    <a href="#contact" class="sticky-cta" id="stickyCta">Schedule Your Consultation</a>
+    <a href="#contact" class="sticky-cta" id="stickyCta" aria-label="Schedule your consultation">
+        Schedule Your Consultation
+    </a>
 
     <!-- Header -->
-    <header>
-        <img src="Brand logo.jpg" alt="Sahu Eye Centre Logo" class="header-logo">
-        <a href="#contact" class="header-cta">Schedule Your Consultation</a>
+    <header role="banner">
+        <img src="images/logo/logo.webp" alt="Sahu Eye Centre & Optical Logo" class="header-logo" width="200"
+            height="auto">
+        <a href="#contact" class="header-cta" aria-label="Schedule your consultation">
+            Schedule Your Consultation
+        </a>
         <div class="header-content">
             <h1>Dr. Purna Chandra Sahu</h1>
             <p class="subtitle">MS, Ex-CDMO Sambalpur, Odisha</p>
@@ -1135,7 +191,7 @@
     </header>
 
     <!-- Navigation -->
-    <nav>
+    <nav role="navigation" aria-label="Main navigation">
         <div class="container">
             <ul>
                 <li><a href="#hero">Meet the Doctor</a></li>
@@ -1149,284 +205,397 @@
         </div>
     </nav>
 
-    <!-- Meet the Doctor Hero Section -->
-    <section id="hero" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Advanced Eye Care Rooted in Decades of Experience</h1>
-                    <p class="hero-subtitle">Led by Dr. Purna Chandra Sahu, MS (Ex-CDMO)</p>
-                    <p class="hero-description">
-                        With over 40+ years of distinguished service in ophthalmology and public health, Dr. Purna Chandra Sahu brings unparalleled expertise to every consultation. His tenure as Chief District Medical Officer (CDMO) of Sambalpur, combined with his Master of Surgery (MS) in Ophthalmology, establishes him as a trusted authority in eye care across Odisha.
-                    </p>
-                    <div class="trust-badges">
-                        <div class="trust-badge">
-                            <strong>40+</strong>
-                            <span>Years Experience</span>
-                        </div>
-                        <div class="trust-badge">
-                            <strong>MS</strong>
-                            <span>Ophthalmology</span>
-                        </div>
-                        <div class="trust-badge">
-                            <strong>Ex-CDMO</strong>
-                            <span>Sambalpur</span>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Meet the Doctor Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Advanced Eye Care Rooted in Decades of Experience</h1>
+                        <p class="hero-subtitle">Led by Dr. Purna Chandra Sahu, MS (Ex-CDMO)</p>
+                        <p class="hero-description">
+                            With over 40+ years of distinguished service in ophthalmology and public health, Dr. Purna
+                            Chandra Sahu brings unparalleled expertise to every consultation. His tenure as Chief
+                            District Medical Officer (CDMO) of Sambalpur, combined with his Master of Surgery (MS) in
+                            Ophthalmology, establishes him as a trusted authority in eye care across Odisha.
+                        </p>
+                        <div class="trust-badges">
+                            <div class="trust-badge">
+                                <strong>40+</strong>
+                                <span>Years Experience</span>
+                            </div>
+                            <div class="trust-badge">
+                                <strong>MS</strong>
+                                <span>Ophthalmology</span>
+                            </div>
+                            <div class="trust-badge">
+                                <strong>Ex-CDMO</strong>
+                                <span>Sambalpur</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <img src="Dr. P C Sahu Image closeup square.jpeg" alt="Dr. Purna Chandra Sahu" class="hero-image">
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">Legacy of Trust in Odisha</h2>
-            <div class="about-content">
-    <div class="about-text">
-        <h3 class="legacy-heading">A Compassionate, Authoritative, and Community-Oriented Approach</h3>
-        <p>Dr. Purna Chandra Sahu's journey in ophthalmology spans over four decades, marked by excellence, compassion, and an unwavering commitment to patient care. Having served as the Chief District Medical Officer (CDMO) of Sambalpur, Dr. Sahu brings a unique perspective that combines administrative excellence with clinical expertise.</p>
-        <p>His Master of Surgery (MS) degree in Ophthalmology, earned from prestigious Burla Medical College, reflects his dedication to mastering the art and science of eye care. This extensive training, combined with years of hands-on experience, enables Dr. Sahu to diagnose and treat a wide spectrum of eye conditions with precision and care.</p>
-        <p>At Sahu Eye Centre & Optical, we believe that every patient deserves personalized attention. Dr. Sahu takes time to understand each patient's unique concerns, explaining complex medical conditions in simple, understandable language. This patient-centered approach, rooted in decades of experience, has made our clinic a trusted name in Sundargarh and beyond.</p>
-        <p><strong>Important Note:</strong> Dr. P. C. Sahu only consults at Sahu Eye Centre & Optical. Beware of fraud and ensure you visit our official clinic for authentic consultation.</p>
-    </div>
-    <div class="about-side-images">
-        <img src="Doctor PC Sahu seeing patient.jpeg" alt="Patient Exam 1" class="about-image">
-        <img src="Doctor PC Sahu seeing patient - 1.jpeg" alt="Patient Exam 2" class="about-image">
-    </div>
-</div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <img src="Dr. P C Sahu Image closeup square.jpeg" alt="Cataract Surgery" class="service-image">
-                    <h3>Cataract Surgery</h3>
-                    <p>Expert diagnosis and surgical treatment for cataracts, ensuring clear vision restoration with modern techniques and compassionate care.</p>
-                    <a href="#contact" class="learn-more">Learn More →</a>
-                </div>
-                <div class="service-card">
-                    <img src="Doctor PC Sahu seeing patient.jpeg" alt="Glaucoma Management" class="service-image">
-                    <h3>Glaucoma Management</h3>
-                    <p>Comprehensive screening, early detection, and effective management of glaucoma to prevent vision loss and preserve eye health.</p>
-                    <a href="#contact" class="learn-more">Learn More →</a>
-                </div>
-                <div class="service-card">
-                    <img src="Doctor PC Sahu seeing patient - 1.jpeg" alt="Vision Testing" class="service-image">
-                    <h3>Vision Testing</h3>
-                    <p>Thorough eye examinations using modern diagnostic equipment to assess vision, detect refractive errors, and identify eye conditions early.</p>
-                    <a href="#contact" class="learn-more">Learn More →</a>
-                </div>
-                <div class="service-card">
-                    <img src="Optical range:collection.jpeg" alt="Optical Gallery" class="service-image">
-                    <h3>Optical Gallery</h3>
-                    <p>Premium frames and lenses for all ages. Wide selection of stylish eyewear at affordable prices, ensuring both quality and style.</p>
-                    <a href="#gallery" class="learn-more">View Gallery →</a>
+                    <img src="images/hero/dr-sahu-hero.webp" alt="Dr. Purna Chandra Sahu - Experienced Ophthalmologist"
+                        class="hero-image" width="600" height="500" loading="eager">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Optical Gallery -->
-    <section id="gallery" class="optical-gallery">
-        <div class="container">
-            <h2 class="section-title">Optical Gallery</h2>
-            <div class="gallery-container">
-                <div class="gallery-carousel">
-                    <div class="gallery-track" id="galleryTrack">
-                        <div class="gallery-item" data-index="0">
-                            <div class="gallery-item-wrapper">
-                                <img src="Optical range:collection.jpeg" alt="Premium Eyewear Collection">
-                            </div>
-                        </div>
-                        <div class="gallery-item" data-index="1">
-                            <div class="gallery-item-wrapper">
-                                <img src="Optical range:collection - 1.jpeg" alt="Stylish Frames Collection">
-                            </div>
-                        </div>
-                        <div class="gallery-item" data-index="2">
-                            <div class="gallery-item-wrapper">
-                                <img src="Location.jpeg" alt="Optical Showcase">
-                            </div>
-                        </div>
-                        <div class="gallery-item" data-index="3">
-                            <div class="gallery-item-wrapper">
-                                <img src="Location 1.jpeg" alt="Frame Selection">
-                            </div>
-                        </div>
-                        <div class="gallery-item" data-index="4">
-                            <div class="gallery-item-wrapper">
-                                <img src="Doctor PC Sahu seeing patient.jpeg" alt="Doctor Consultation">
-                            </div>
-                        </div>
-                        <div class="gallery-item" data-index="5">
-                            <div class="gallery-item-wrapper">
-                                <img src="Doctor PC Sahu seeing patient - 1.jpeg" alt="Patient Examination">
-                            </div>
-                        </div>
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">Legacy of Trust in Odisha</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3 class="legacy-heading">A Compassionate, Authoritative, and Community-Oriented Approach</h3>
+                        <p>Dr. Purna Chandra Sahu's journey in ophthalmology spans over four decades, marked by
+                            excellence, compassion, and an unwavering commitment to patient care. Having served as the
+                            Chief District Medical Officer (CDMO) of Sambalpur, Dr. Sahu brings a unique perspective
+                            that combines administrative excellence with clinical expertise.</p>
+                        <p>His Master of Surgery (MS) degree in Ophthalmology, earned from prestigious Burla Medical
+                            College, reflects his dedication to mastering the art and science of eye care. This
+                            extensive training, combined with years of hands-on experience, enables Dr. Sahu to diagnose
+                            and treat a wide spectrum of eye conditions with precision and care.</p>
+                        <p>At Sahu Eye Centre & Optical, we believe that every patient deserves personalized attention.
+                            Dr. Sahu takes time to understand each patient's unique concerns, explaining complex medical
+                            conditions in simple, understandable language. This patient-centered approach, rooted in
+                            decades of experience, has made our clinic a trusted name in Sundargarh and beyond.</p>
+                        <p><strong>Important Note:</strong> Dr. P. C. Sahu only consults at Sahu Eye Centre & Optical.
+                            Beware of fraud and ensure you visit our official clinic for authentic consultation.</p>
                     </div>
-                </div>
-                <div class="gallery-dots" id="galleryDots"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2 class="section-title">Patient Testimonials</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">★★★★★</div>
-                    <p class="testimonial-text">"Excellent service and very professional staff — they make you feel at ease right away. Got check-up and glasses done smoothly with great care and attention to detail. Highly recommend this eye center for both treatment and optical needs!"</p>
-                    <p class="testimonial-author">- Likhit Sharoff</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">★★★★★</div>
-                    <p class="testimonial-text">"The doctor was outstanding — patient, approachable, and clearly very knowledgeable. They didn't just look at my prescription; they also checked for early signs of conditions like glaucoma, cataracts, and retinal issues, which often go unnoticed until it's too late. I really appreciated the time they took to explain my results in detail, breaking down complex medical terms into simple language I could understand."</p>
-                    <p class="testimonial-author">- Sibanandini Dhal</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">★★★★★</div>
-                    <p class="testimonial-text">"By looking at few negative reviews I was bit confused to visit or not. But some friends recommended and finally I visited the clinic for an eye infection. I was amazed by the service and politeness of staff over there. Doctor Sahu heard my problem with patience. Overall great experience."</p>
-                    <p class="testimonial-author">- Biswakalyan Mohanty</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Patient Education / FAQ Section -->
-    <section id="faq" class="faq">
-        <div class="container">
-            <h2 class="section-title">Patient Education</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">When should I get a cataract check-up?</div>
-                    <div class="faq-answer">
-                        <p>If you're experiencing blurred vision, difficulty seeing at night, sensitivity to light, or seeing halos around lights, it's time for a cataract evaluation. We recommend regular eye exams every 1-2 years after age 40, and more frequently if you have diabetes or a family history of eye conditions. Early detection allows for better treatment outcomes.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">What are the early signs of glaucoma?</div>
-                    <div class="faq-answer">
-                        <p>Glaucoma is often called the "silent thief of sight" because it may have no symptoms in early stages. However, warning signs can include gradual loss of peripheral vision, tunnel vision, eye pain, headache, blurred vision, or halos around lights. Regular comprehensive eye exams are crucial, especially if you're over 40, have a family history, or have diabetes.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">How often should I have my eyes examined?</div>
-                    <div class="faq-answer">
-                        <p>Adults should have a comprehensive eye exam every 1-2 years, depending on age and risk factors. Children should be examined at 6 months, 3 years, and before starting school. If you have diabetes, a family history of eye disease, or wear glasses/contacts, more frequent exams may be necessary. Dr. Sahu will recommend a schedule based on your individual needs.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">What eye conditions do you treat?</div>
-                    <div class="faq-answer">
-                        <p>We treat a comprehensive range of eye conditions including cataracts, glaucoma, diabetic retinopathy, macular degeneration, dry eyes, red eyes, refractive errors (nearsightedness, farsightedness, astigmatism), and other common eye problems. We also provide routine eye examinations and vision testing for all ages.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Do you provide spectacles and contact lenses?</div>
-                    <div class="faq-answer">
-                        <p>Yes, we offer a wide range of premium spectacles and contact lenses at affordable prices. Our optical gallery features stylish frames for all ages, and our team helps you choose the best option for your prescription, lifestyle, and budget. Quality eyewear is essential for clear vision and eye health.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">What makes Dr. Sahu's clinic different?</div>
-                    <div class="faq-answer">
-                        <p>Dr. Purna Chandra Sahu's extensive experience as Ex-CDMO and MS in Ophthalmology, combined with personalized patient care, modern diagnostic equipment, and affordable pricing, makes us a trusted choice. Dr. Sahu takes time to explain conditions in simple terms, ensuring patients understand their eye health. We believe in honest, transparent care for every patient.</p>
+                    <div class="about-side-images">
+                        <img src="images/about/patient-exam-1.webp"
+                            alt="Dr. Sahu examining a patient with advanced equipment" class="about-image" width="400"
+                            height="400" loading="lazy">
+                        <img src="images/about/patient-exam-2.webp"
+                            alt="Dr. Sahu providing personalized eye care consultation" class="about-image" width="400"
+                            height="400" loading="lazy">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div class="contact-details">
-                            <h3>Location</h3>
-                            <p>Infront of Chhabi Hotel, Bijaya Talkies Rd, Sundargarh, Odisha 770001</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📞</div>
-                        <div class="contact-details">
-                            <h3>Phone</h3>
-                            <div class="phone-numbers">
-                                <a href="tel:7854070264">7854070264</a>
-                                <a href="tel:9338474882">9338474882</a>
-                                <a href="tel:7008162922">7008162922</a>
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <img src="images/services/cataract-surgery.webp"
+                            alt="Cataract Surgery - Expert treatment for clear vision" class="service-image" width="300"
+                            height="200" loading="lazy">
+                        <h3>Cataract Surgery</h3>
+                        <p>Expert diagnosis and surgical treatment for cataracts, ensuring clear vision restoration with
+                            modern techniques and compassionate care.</p>
+                        <a href="#contact" class="learn-more" aria-label="Learn more about cataract surgery">Learn More
+                            <i class="fas fa-arrow-right"></i></a>
+                    </article>
+                    <article class="service-card">
+                        <img src="images/services/glaucoma-management.webp"
+                            alt="Glaucoma Management - Preventing vision loss through expert care" class="service-image"
+                            width="300" height="200" loading="lazy">
+                        <h3>Glaucoma Management</h3>
+                        <p>Comprehensive screening, early detection, and effective management of glaucoma to prevent
+                            vision loss and preserve eye health.</p>
+                        <a href="#contact" class="learn-more" aria-label="Learn more about glaucoma management">Learn
+                            More <i class="fas fa-arrow-right"></i></a>
+                    </article>
+                    <article class="service-card">
+                        <img src="images/services/vision-testing.webp"
+                            alt="Vision Testing - Comprehensive eye examinations" class="service-image" width="300"
+                            height="200" loading="lazy">
+                        <h3>Vision Testing</h3>
+                        <p>Thorough eye examinations using modern diagnostic equipment to assess vision, detect
+                            refractive errors, and identify eye conditions early.</p>
+                        <a href="#contact" class="learn-more" aria-label="Learn more about vision testing">Learn More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </article>
+                    <article class="service-card">
+                        <img src="images/services/optical-gallery.webp"
+                            alt="Premium Optical Gallery - Quality eyewear collection" class="service-image" width="300"
+                            height="200" loading="lazy">
+                        <h3>Optical Gallery</h3>
+                        <p>Premium frames and lenses for all ages. Wide selection of stylish eyewear at affordable
+                            prices, ensuring both quality and style.</p>
+                        <a href="#gallery" class="learn-more" aria-label="View our optical gallery">View Gallery <i
+                                class="fas fa-arrow-right"></i></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Optical Gallery -->
+        <section id="gallery" class="optical-gallery">
+            <div class="container">
+                <h2 class="section-title">Optical Gallery</h2>
+                <div class="gallery-container">
+                    <div class="gallery-carousel" role="region" aria-label="Image carousel">
+                        <div class="gallery-track" id="galleryTrack">
+                            <div class="gallery-item" data-index="0">
+                                <div class="gallery-item-wrapper">
+                                    <img src="images/gallery/optical-1.webp" alt="Premium eyewear collection showcase"
+                                        width="400" height="450" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="gallery-item" data-index="1">
+                                <div class="gallery-item-wrapper">
+                                    <img src="images/gallery/optical-2.webp" alt="Stylish frames collection display"
+                                        width="400" height="450" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="gallery-item" data-index="2">
+                                <div class="gallery-item-wrapper">
+                                    <img src="images/gallery/location-1.webp" alt="Optical showcase at Sahu Eye Centre"
+                                        width="400" height="450" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="gallery-item" data-index="3">
+                                <div class="gallery-item-wrapper">
+                                    <img src="images/gallery/location-2.webp" alt="Frame selection area" width="400"
+                                        height="450" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="gallery-item" data-index="4">
+                                <div class="gallery-item-wrapper">
+                                    <img src="images/gallery/patient-care-1.webp" alt="Doctor consultation in progress"
+                                        width="400" height="450" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="gallery-item" data-index="5">
+                                <div class="gallery-item-wrapper">
+                                    <img src="images/gallery/patient-care-2.webp" alt="Patient examination with care"
+                                        width="400" height="450" loading="lazy">
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">✉️</div>
-                        <div class="contact-details">
-                            <h3>Email</h3>
-                            <p><a href="mailto:sahueyecentre@gmail.com">sahueyecentre@gmail.com</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">🕐</div>
-                        <div class="contact-details">
-                            <h3>Consultation Hours</h3>
-                            <p>Monday to Sunday<br>10:00 AM - 1:00 PM<br>6:00 PM - 8:00 PM</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="map-container">
-                    <a href="https://maps.google.com/?q=22.1175468,84.037608" target="_blank" style="display: block; width: 100%; height: 100%; position: relative;">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.1234567890123!2d84.037608!3d22.1175468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a20edc6778786d3%3A0xf51d3b62454dd505!2sSahu%20Eye%20Centre%20%26%20Optical!5e0!3m2!1sen!2sin!4v1736500000000!5m2!1sen!2sin&q=22.1175468,84.037608" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            style="pointer-events: none;">
-                        </iframe>
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; cursor: pointer;" onclick="window.open('https://maps.google.com/?q=22.1175468,84.037608', '_blank')"></div>
-                    </a>
+                    <div class="gallery-dots" id="galleryDots" role="tablist" aria-label="Carousel navigation"></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <h2 class="section-title">Patient Testimonials</h2>
+                <div class="testimonials-grid">
+                    <article class="testimonial-card">
+                        <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Excellent service and very professional staff — they make you feel
+                            at ease right away. Got check-up and glasses done smoothly with great care and attention to
+                            detail. Highly recommend this eye center for both treatment and optical needs!"</p>
+                        <p class="testimonial-author">- Likhit Sharoff</p>
+                    </article>
+                    <article class="testimonial-card">
+                        <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"The doctor was outstanding — patient, approachable, and clearly
+                            very knowledgeable. They didn't just look at my prescription; they also checked for early
+                            signs of conditions like glaucoma, cataracts, and retinal issues, which often go unnoticed
+                            until it's too late. I really appreciated the time they took to explain my results in
+                            detail, breaking down complex medical terms into simple language I could understand."</p>
+                        <p class="testimonial-author">- Sibanandini Dhal</p>
+                    </article>
+                    <article class="testimonial-card">
+                        <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"By looking at few negative reviews I was bit confused to visit or
+                            not. But some friends recommended and finally I visited the clinic for an eye infection. I
+                            was amazed by the service and politeness of staff over there. Doctor Sahu heard my problem
+                            with patience. Overall great experience."</p>
+                        <p class="testimonial-author">- Biswakalyan Mohanty</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Patient Education / FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <h2 class="section-title">Patient Education</h2>
+                <div class="faq-container">
+                    <article class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+                            When should I get a cataract check-up?
+                        </button>
+                        <div class="faq-answer" id="faq-1">
+                            <p>If you're experiencing blurred vision, difficulty seeing at night, sensitivity to light,
+                                or seeing halos around lights, it's time for a cataract evaluation. We recommend regular
+                                eye exams every 1-2 years after age 40, and more frequently if you have diabetes or a
+                                family history of eye conditions. Early detection allows for better treatment outcomes.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+                            What are the early signs of glaucoma?
+                        </button>
+                        <div class="faq-answer" id="faq-2">
+                            <p>Glaucoma is often called the "silent thief of sight" because it may have no symptoms in
+                                early stages. However, warning signs can include gradual loss of peripheral vision,
+                                tunnel vision, eye pain, headache, blurred vision, or halos around lights. Regular
+                                comprehensive eye exams are crucial, especially if you're over 40, have a family
+                                history, or have diabetes.</p>
+                        </div>
+                    </article>
+                    <article class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+                            How often should I have my eyes examined?
+                        </button>
+                        <div class="faq-answer" id="faq-3">
+                            <p>Adults should have a comprehensive eye exam every 1-2 years, depending on age and risk
+                                factors. Children should be examined at 6 months, 3 years, and before starting school.
+                                If you have diabetes, a family history of eye disease, or wear glasses/contacts, more
+                                frequent exams may be necessary. Dr. Sahu will recommend a schedule based on your
+                                individual needs.</p>
+                        </div>
+                    </article>
+                    <article class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+                            What eye conditions do you treat?
+                        </button>
+                        <div class="faq-answer" id="faq-4">
+                            <p>We treat a comprehensive range of eye conditions including cataracts, glaucoma, diabetic
+                                retinopathy, macular degeneration, dry eyes, red eyes, refractive errors
+                                (nearsightedness, farsightedness, astigmatism), and other common eye problems. We also
+                                provide routine eye examinations and vision testing for all ages.</p>
+                        </div>
+                    </article>
+                    <article class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+                            Do you provide spectacles and contact lenses?
+                        </button>
+                        <div class="faq-answer" id="faq-5">
+                            <p>Yes, we offer a wide range of premium spectacles and contact lenses at affordable prices.
+                                Our optical gallery features stylish frames for all ages, and our team helps you choose
+                                the best option for your prescription, lifestyle, and budget. Quality eyewear is
+                                essential for clear vision and eye health.</p>
+                        </div>
+                    </article>
+                    <article class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
+                            What makes Dr. Sahu's clinic different?
+                        </button>
+                        <div class="faq-answer" id="faq-6">
+                            <p>Dr. Purna Chandra Sahu's extensive experience as Ex-CDMO and MS in Ophthalmology,
+                                combined with personalized patient care, modern diagnostic equipment, and affordable
+                                pricing, makes us a trusted choice. Dr. Sahu takes time to explain conditions in simple
+                                terms, ensuring patients understand their eye health. We believe in honest, transparent
+                                care for every patient.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Contact</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon" aria-hidden="true">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Location</h3>
+                                <p>Infront of Chhabi Hotel, Bijaya Talkies Rd, Sundargarh, Odisha 770001</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon" aria-hidden="true">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Phone</h3>
+                                <div class="phone-numbers">
+                                    <a href="tel:+917854070264">+91 7854070264</a>
+                                    <a href="tel:+919338474882">+91 9338474882</a>
+                                    <a href="tel:+917008162922">+91 7008162922</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon" aria-hidden="true">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <p><a href="mailto:sahueyecentre@gmail.com">sahueyecentre@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon" aria-hidden="true">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Consultation Hours</h3>
+                                <p>Monday to Sunday<br>10:00 AM - 1:00 PM<br>6:00 PM - 8:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <a href="https://maps.google.com/?q=22.1175468,84.037608" target="_blank"
+                            rel="noopener noreferrer"
+                            style="display: block; width: 100%; height: 100%; position: relative;"
+                            aria-label="View location on Google Maps">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.1234567890123!2d84.037608!3d22.1175468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a20edc6778786d3%3A0xf51d3b62454dd505!2sSahu%20Eye%20Centre%20%26%20Optical!5e0!3m2!1sen!2sin!4v1736500000000!5m2!1sen!2sin&q=22.1175468,84.037608"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                style="pointer-events: none;"
+                                title="Location of Sahu Eye Centre & Optical on Google Maps">
+                            </iframe>
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; cursor: pointer;"
+                                onclick="window.open('https://maps.google.com/?q=22.1175468,84.037608', '_blank')">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-info">
                     <p><strong>Sahu Eye Centre & Optical</strong></p>
                     <p>Dr. Purna Chandra Sahu, MS, Ex-CDMO</p>
                     <p>Infront of Chhabi Hotel, Bijaya Talkies Rd, Sundargarh, Odisha 770001</p>
-                    <p>Phone: <a href="tel:7854070264" style="color: white;">7854070264</a> | <a href="tel:9338474882" style="color: white;">9338474882</a> | <a href="tel:7008162922" style="color: white;">7008162922</a></p>
-                    <p>Email: <a href="mailto:sahueyecentre@gmail.com" style="color: white;">sahueyecentre@gmail.com</a></p>
+                    <p>Phone: <a href="tel:+917854070264" style="color: white;">+91 7854070264</a> | <a
+                            href="tel:+919338474882" style="color: white;">+91 9338474882</a> | <a
+                            href="tel:+917008162922" style="color: white;">+91 7008162922</a></p>
+                    <p>Email: <a href="mailto:sahueyecentre@gmail.com" style="color: white;">sahueyecentre@gmail.com</a>
+                    </p>
                     <div class="social-links">
-                        <a href="https://wa.me/917854070264" target="_blank" aria-label="WhatsApp">💬</a>
+                        <a href="https://wa.me/917854070264" target="_blank" rel="noopener noreferrer"
+                            aria-label="Contact us on WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-info">
                     <p><strong>Consultation Hours</strong></p>
                     <div class="consultation-hours">
                         <div class="hours-row">
-                            <span class="hours-icon">📅</span>
+                            <span class="hours-icon"><i class="fas fa-calendar-alt"></i></span>
                             <span class="hours-text">Monday to Sunday</span>
                         </div>
                         <div class="hours-row">
-                            <span class="hours-icon">🌅</span>
+                            <span class="hours-icon"><i class="fas fa-sun"></i></span>
                             <span class="hours-text">Morning: <span class="hours-time">10:00 AM - 1:00 PM</span></span>
                         </div>
                         <div class="hours-row">
-                            <span class="hours-icon">🌆</span>
+                            <span class="hours-icon"><i class="fas fa-moon"></i></span>
                             <span class="hours-text">Evening: <span class="hours-time">6:00 PM - 8:00 PM</span></span>
                         </div>
                     </div>
@@ -1440,234 +609,18 @@
     </footer>
 
     <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">↑</button>
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <!-- WhatsApp Floating Icon -->
-    <a href="https://wa.me/917854070264" target="_blank" class="whatsapp-float" aria-label="Contact on WhatsApp">💬</a>
+    <a href="https://wa.me/917854070264" target="_blank" rel="noopener noreferrer" class="whatsapp-float"
+        aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-    <script>
-        // Loading Animation
-        window.addEventListener('load', function() {
-            const loader = document.getElementById('loader');
-            setTimeout(() => {
-                loader.classList.add('hidden');
-            }, 500);
-        });
-
-        // Sticky CTA Button
-        const stickyCta = document.getElementById('stickyCta');
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                stickyCta.classList.add('visible');
-            } else {
-                stickyCta.classList.remove('visible');
-            }
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Scroll to Top Button
-        const scrollToTopBtn = document.getElementById('scrollToTop');
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                scrollToTopBtn.classList.add('visible');
-            } else {
-                scrollToTopBtn.classList.remove('visible');
-            }
-        });
-
-        scrollToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', function() {
-                const faqItem = this.parentElement;
-                const isActive = faqItem.classList.contains('active');
-                
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                if (!isActive) {
-                    faqItem.classList.add('active');
-                }
-            });
-        });
-
-        // Gallery Carousel - Moving all images 100% horizontally every 2 seconds with infinite loop
-        (function() {
-            const galleryTrack = document.getElementById('galleryTrack');
-            const galleryDots = document.getElementById('galleryDots');
-            const originalItems = Array.from(galleryTrack.querySelectorAll('.gallery-item'));
-            const totalItems = originalItems.length;
-            
-            // Clone first and last items for infinite loop
-            const firstClone = originalItems[0].cloneNode(true);
-            const lastClone = originalItems[totalItems - 1].cloneNode(true);
-            galleryTrack.insertBefore(lastClone, originalItems[0]);
-            galleryTrack.appendChild(firstClone);
-            
-            // Get all items including clones
-            const items = Array.from(galleryTrack.querySelectorAll('.gallery-item'));
-            let currentIndex = 1; // Start at first real item (after clone)
-            let autoPlayInterval;
-            let isPaused = false;
-            let isTransitioning = false;
-
-            // Create dots (only for original items)
-            originalItems.forEach((_, index) => {
-                const dot = document.createElement('div');
-                dot.className = 'gallery-dot' + (index === 0 ? ' active' : '');
-                dot.addEventListener('click', () => {
-                    goToSlide(index);
-                });
-                galleryDots.appendChild(dot);
-            });
-
-            function updateCarousel(disableTransition = false) {
-                if (disableTransition) {
-                    galleryTrack.style.transition = 'none';
-                } else {
-                    galleryTrack.style.transition = 'transform 0.6s ease-in-out';
-                }
-
-                // Calculate indices for left, center, and right items
-                const leftIndex = (currentIndex - 1 + items.length) % items.length;
-                const centerIndex = currentIndex;
-                const rightIndex = (currentIndex + 1) % items.length;
-
-                // Update classes for left, center, right
-                items.forEach((item, index) => {
-                    item.classList.remove('left', 'center', 'right');
-                    
-                    if (index === centerIndex) {
-                        item.classList.add('center');
-                    } else if (index === leftIndex) {
-                        item.classList.add('left');
-                    } else if (index === rightIndex) {
-                        item.classList.add('right');
-                    }
-                });
-
-                // Move track horizontally by 33.333% (one image width) for each step
-                const offset = -currentIndex * 33.333;
-                galleryTrack.style.transform = `translateX(${offset}%)`;
-
-                // Update dots (map currentIndex to original index)
-                // currentIndex 0 = lastClone (show last dot)
-                // currentIndex 1-6 = real items 0-5 (show corresponding dot)
-                // currentIndex 7 = firstClone (show first dot)
-                let originalIndex;
-                if (currentIndex === 0) {
-                    originalIndex = totalItems - 1; // Last item
-                } else if (currentIndex >= items.length - 1) {
-                    originalIndex = 0; // First item
-                } else {
-                    originalIndex = currentIndex - 1; // Real items
-                }
-                galleryDots.querySelectorAll('.gallery-dot').forEach((dot, index) => {
-                    dot.classList.toggle('active', index === originalIndex);
-                });
-            }
-
-            function goToSlide(originalIndex) {
-                currentIndex = originalIndex + 1; // +1 because of clone at start
-                updateCarousel();
-                resetAutoPlay();
-            }
-
-            function nextSlide() {
-                if (isTransitioning) return;
-                isTransitioning = true;
-                
-                currentIndex++;
-                
-                // Structure: [lastClone(0), item0(1), item1(2), item2(3), item3(4), item4(5), item5(6), firstClone(7)]
-                // When currentIndex reaches 7 (firstClone), we need to seamlessly loop back
-                if (currentIndex >= items.length - 1) {
-                    // Show the clone first with transition
-                    updateCarousel();
-                    setTimeout(() => {
-                        // Disable transition and instantly jump back to first real item
-                        galleryTrack.style.transition = 'none';
-                        currentIndex = 1; // Reset to first real item
-                        const offset = -currentIndex * 33.333;
-                        galleryTrack.style.transform = `translateX(${offset}%)`;
-                        
-                        // Update classes
-                        const leftIndex = (currentIndex - 1 + items.length) % items.length;
-                        const centerIndex = currentIndex;
-                        const rightIndex = (currentIndex + 1) % items.length;
-                        
-                        items.forEach((item, index) => {
-                            item.classList.remove('left', 'center', 'right');
-                            if (index === centerIndex) {
-                                item.classList.add('center');
-                            } else if (index === leftIndex) {
-                                item.classList.add('left');
-                            } else if (index === rightIndex) {
-                                item.classList.add('right');
-                            }
-                        });
-                        
-                        // Update dots
-                        galleryDots.querySelectorAll('.gallery-dot').forEach((dot, index) => {
-                            dot.classList.toggle('active', index === 0);
-                        });
-                        
-                        // Re-enable transition after a brief moment
-                        setTimeout(() => {
-                            galleryTrack.style.transition = 'transform 0.6s ease-in-out';
-                            isTransitioning = false;
-                        }, 50);
-                    }, 600); // Wait for transition to complete
-                } else {
-                    updateCarousel();
-                    setTimeout(() => {
-                        isTransitioning = false;
-                    }, 600);
-                }
-            }
-
-            function resetAutoPlay() {
-                clearInterval(autoPlayInterval);
-                if (!isPaused) {
-                    autoPlayInterval = setInterval(nextSlide, 2000); // 2 seconds
-                }
-            }
-
-            // Initialize
-            updateCarousel();
-            resetAutoPlay();
-
-            // Pause on hover
-            galleryTrack.addEventListener('mouseenter', () => {
-                isPaused = true;
-                clearInterval(autoPlayInterval);
-            });
-            
-            galleryTrack.addEventListener('mouseleave', () => {
-                isPaused = false;
-                resetAutoPlay();
-            });
-        })();
-    </script>
+    <!-- Main JavaScript - Deferred for better performance -->
+    <script src="script.js" defer></script>
 </body>
+
 </html>

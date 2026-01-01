@@ -1,0 +1,15 @@
+# robots.txt for Sahu Eye Centre & Optical
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow crawling of any future admin or private areas
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location (UPDATE THIS URL WHEN YOU HAVE YOUR DOMAIN)
+Sitemap: https://sgiri19.github.io/sahu-eye-centre/sitemap.xml
+
+# Crawl-delay to be respectful of server resources
+Crawl-delay: 1
