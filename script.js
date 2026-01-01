@@ -113,178 +113,37 @@ document.querySelectorAll('.faq-question').forEach(question => {
 // ============================================
 // GALLERY CAROUSEL
 // ============================================
-(function () {
-    const galleryTrack = document.getElementById('galleryTrack');
-    const galleryDots = document.getElementById('galleryDots');
-    const originalItems = Array.from(galleryTrack.querySelectorAll('.gallery-item'));
-    const totalItems = originalItems.length;
-
-    // Clone first and last items for infinite loop
-    const firstClone = originalItems[0].cloneNode(true);
-    const lastClone = originalItems[totalItems - 1].cloneNode(true);
-    galleryTrack.insertBefore(lastClone, originalItems[0]);
-    galleryTrack.appendChild(firstClone);
-
-    // Get all items including clones
-    const items = Array.from(galleryTrack.querySelectorAll('.gallery-item'));
-    let currentIndex = 1; // Start at first real item (after clone)
-    let autoPlayInterval;
-    let isPaused = false;
-    let isTransitioning = false;
-
-    // Create dots (only for original items)
-    originalItems.forEach((_, index) => {
-        const dot = document.createElement('button');
-        dot.className = 'gallery-dot' + (index === 0 ? ' active' : '');
-        dot.setAttribute('role', 'tab');
-        dot.setAttribute('aria-label', `View image ${index + 1} of ${totalItems}`);
-        dot.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
-        dot.addEventListener('click', () => {
-            goToSlide(index);
-        });
-        galleryDots.appendChild(dot);
+// ============================================
+// GALLERY CAROUSEL (Swiper.js)
+// ============================================
+document.addEventListener('DOMContentLoaded', function () {
+    var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2,
+            slideShadows: true,
+        },
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
     });
-
-    const dots = galleryDots.querySelectorAll('.gallery-dot');
-
-    function updateCarousel(disableTransition = false) {
-        if (disableTransition) {
-            galleryTrack.style.transition = 'none';
-        } else {
-            galleryTrack.style.transition = 'transform 0.6s ease-in-out';
-        }
-
-        // Calculate indices for left, center, and right items
-        const leftIndex = (currentIndex - 1 + items.length) % items.length;
-        const centerIndex = currentIndex;
-        const rightIndex = (currentIndex + 1) % items.length;
-
-        // Update classes for left, center, right
-        items.forEach((item, index) => {
-            item.classList.remove('left', 'center', 'right');
-
-            if (index === centerIndex) {
-                item.classList.add('center');
-            } else if (index === leftIndex) {
-                item.classList.add('left');
-            } else if (index === rightIndex) {
-                item.classList.add('right');
-            }
-        });
-
-        // Move track horizontally by 33.333% (one image width) for each step
-        const offset = -currentIndex * 33.333;
-        galleryTrack.style.transform = `translateX(${offset}%)`;
-
-        // Update dots
-        let originalIndex;
-        if (currentIndex === 0) {
-            originalIndex = totalItems - 1;
-        } else if (currentIndex >= items.length - 1) {
-            originalIndex = 0;
-        } else {
-            originalIndex = currentIndex - 1;
-        }
-
-        dots.forEach((dot, index) => {
-            const isActive = index === originalIndex;
-            dot.classList.toggle('active', isActive);
-            dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
-        });
-    }
-
-    function goToSlide(originalIndex) {
-        currentIndex = originalIndex + 1;
-        updateCarousel();
-        resetAutoPlay();
-    }
-
-    function nextSlide() {
-        if (isTransitioning) return;
-        isTransitioning = true;
-
-        currentIndex++;
-
-        // When reaching the clone at the end
-        if (currentIndex >= items.length - 1) {
-            updateCarousel();
-            setTimeout(() => {
-                galleryTrack.style.transition = 'none';
-                currentIndex = 1;
-                const offset = -currentIndex * 33.333;
-                galleryTrack.style.transform = `translateX(${offset}%)`;
-
-                // Update classes instantly for seamless loop
-                const leftIndex = (currentIndex - 1 + items.length) % items.length;
-                const centerIndex = currentIndex;
-                const rightIndex = (currentIndex + 1) % items.length;
-
-                items.forEach((item, index) => {
-                    item.classList.remove('left', 'center', 'right');
-                    if (index === centerIndex) {
-                        item.classList.add('center');
-                    } else if (index === leftIndex) {
-                        item.classList.add('left');
-                    } else if (index === rightIndex) {
-                        item.classList.add('right');
-                    }
-                });
-
-                // Update dots
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === 0);
-                    dot.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
-                });
-
-                // Re-enable transition almost immediately for next slide
-                setTimeout(() => {
-                    galleryTrack.style.transition = 'transform 0.6s ease-in-out';
-                    isTransitioning = false;
-                }, 20);
-            }, 600);
-        } else {
-            updateCarousel();
-            setTimeout(() => {
-                isTransitioning = false;
-            }, 600);
-        }
-    }
-
-    function resetAutoPlay() {
-        clearInterval(autoPlayInterval);
-        if (!isPaused) {
-            autoPlayInterval = setInterval(nextSlide, 2000);
-        }
-    }
-
-    // Initialize
-    updateCarousel();
-    resetAutoPlay();
-
-    // Pause on hover
-    galleryTrack.addEventListener('mouseenter', () => {
-        isPaused = true;
-        clearInterval(autoPlayInterval);
-    });
-
-    galleryTrack.addEventListener('mouseleave', () => {
-        isPaused = false;
-        resetAutoPlay();
-    });
-
-    // Keyboard navigation for dots
-    dots.forEach((dot, index) => {
-        dot.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft' && index > 0) {
-                dots[index - 1].focus();
-                dots[index - 1].click();
-            } else if (e.key === 'ArrowRight' && index < dots.length - 1) {
-                dots[index + 1].focus();
-                dots[index + 1].click();
-            }
-        });
-    });
-})();
+});
 
 // ============================================
 // LAZY LOADING FALLBACK (for older browsers)

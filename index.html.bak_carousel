@@ -148,14 +148,11 @@
       gtag('config', 'G-XXXXXXXXXX');
     </script>
     -->
-    <!-- Swiper JS CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
     <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
-
 
     <!-- Loading Animation -->
     <div class="loader" id="loader" role="status" aria-label="Loading">
@@ -331,36 +328,48 @@
         <section id="gallery" class="optical-gallery">
             <div class="container">
                 <h2 class="section-title">Optical Gallery</h2>
-                <!-- Swiper -->
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="images/gallery/optical-1.webp" alt="Premium eyewear collection showcase"
-                                loading="lazy">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="images/gallery/optical-2.webp" alt="Stylish frames collection display"
-                                loading="lazy">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="images/gallery/location-1.webp" alt="Optical showcase at Sahu Eye Centre"
-                                loading="lazy">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="images/gallery/location-2.webp" alt="Frame selection area" loading="lazy">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="images/gallery/patient-care-1.webp" alt="Doctor consultation in progress"
-                                loading="lazy">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="images/gallery/patient-care-2.webp" alt="Patient examination with care"
-                                loading="lazy">
+                <div class="gallery-container">
+                    <div class="gallery-carousel" role="region" aria-label="Image carousel">
+                        <div class="gallery-track" id="galleryTrack">
+                            <div class="gallery-item" data-index="0">
+                                <div class="gallery-item-wrapper">
+                                    <img src="images/gallery/optical-1.webp" alt="Premium eyewear collection showcase"
+                                        width="400" height="450" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="gallery-item" data-index="1">
+                                <div class="gallery-item-wrapper">
+                                    <img src="images/gallery/optical-2.webp" alt="Stylish frames collection display"
+                                        width="400" height="450" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="gallery-item" data-index="2">
+                                <div class="gallery-item-wrapper">
+                                    <img src="images/gallery/location-1.webp" alt="Optical showcase at Sahu Eye Centre"
+                                        width="400" height="450" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="gallery-item" data-index="3">
+                                <div class="gallery-item-wrapper">
+                                    <img src="images/gallery/location-2.webp" alt="Frame selection area" width="400"
+                                        height="450" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="gallery-item" data-index="4">
+                                <div class="gallery-item-wrapper">
+                                    <img src="images/gallery/patient-care-1.webp" alt="Doctor consultation in progress"
+                                        width="400" height="450" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="gallery-item" data-index="5">
+                                <div class="gallery-item-wrapper">
+                                    <img src="images/gallery/patient-care-2.webp" alt="Patient examination with care"
+                                        width="400" height="450" loading="lazy">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                    <div class="gallery-dots" id="galleryDots" role="tablist" aria-label="Carousel navigation"></div>
                 </div>
             </div>
         </section>
@@ -609,9 +618,6 @@
         aria-label="Contact us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Main JavaScript - Deferred for better performance -->
     <script src="script.js" defer></script>
